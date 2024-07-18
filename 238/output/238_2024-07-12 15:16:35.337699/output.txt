@@ -1,0 +1,37 @@
+Normal SVI failed, skipping...
+Normal SVI failed, skipping...
+Normal SVI success
+238_2024-07-12 15:16:35.337699
+
+[StreamExecutorGpuDevice(id=0, process_index=0, slice_index=0), StreamExecutorGpuDevice(id=1, process_index=0, slice_index=0), StreamExecutorGpuDevice(id=2, process_index=0, slice_index=0), StreamExecutorGpuDevice(id=3, process_index=0, slice_index=0)]
+
+[29, (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE', 'SERSIC_ELLIPSE'], ['SHAPELETS', 'SERSIC_ELLIPSE'])]
+MAP took 113.01462230691686 seconds 
+
+log_prob took 4.309769189916551 seconds 
+
+MAP chi-squared: 0.8721684
+
+SVI took 468.38762800605036 seconds 
+
+HMC took 123.06993578793481 seconds 
+
+HMC chi-squared: 1.080101
+
+Rhat: [1485.9518 1505.3094 2057.0972 1767.4504 1943.2094 1319.8224 1679.8312
+ 2230.8972 1632.9495 1620.7618 1781.8884 1431.4282 1590.4218 1708.096
+ 1508.7106 1563.4916 1684.9963 1579.6128 2189.664  1839.5134 2143.64
+ 1999.3445 1409.6085 1896.3818 2358.698  2187.9758 1803.6445 1611.3512
+ 1629.695 ]
+lens: [['theta_E', 1.4891929626464844], ['gamma', 1.7246522903442383], ['e2', 0.0691131055355072], ['e1', -0.009537143632769585], ['center_y', -0.0031551201827824116], ['center_x', -0.15906083583831787]]
+
+lens: [['gamma2', 0.027042903006076813], ['gamma1', 0.11409798264503479]]
+
+lens light: [['n_sersic', 3.569369077682495], ['e2', 0.04259993135929108], ['e1', -0.011808305978775024], ['center_y', -0.002478134585544467], ['center_x', -0.19126150012016296], ['R_sersic', 0.5244266390800476]]
+
+lens light: [['n_sersic', 1.7340017557144165], ['e2', 0.11280862241983414], ['e1', 0.007301360368728638], ['center_y', -0.024500951170921326], ['center_x', -0.20822203159332275], ['R_sersic', 0.3098437786102295]]
+
+source light: [['center_y', 0.00826929323375225], ['center_x', 0.2092166393995285], ['beta', 0.11135798692703247]]
+
+source light: [['n_sersic', 1.4143223762512207], ['e2', 0.2518033981323242], ['e1', -0.3593851327896118], ['center_y', -0.021326784044504166], ['center_x', -0.14394503831863403], ['R_sersic', 1.2340929508209229]]
+

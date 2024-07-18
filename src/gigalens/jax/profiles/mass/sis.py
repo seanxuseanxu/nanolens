@@ -5,6 +5,8 @@ from jax import jit
 
 import gigalens.profile
 
+import tensorflow_probability.substrates.jax as tfp
+tfd = tfp.distributions
 
 class SIS(gigalens.profile.MassProfile):
     _name = "SIS"

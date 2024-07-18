@@ -1,0 +1,69 @@
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+Traceback (most recent call last):
+  File "/global/u1/s/seanjx/gigalens/test.py", line 1, in <module>
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+    import jax
+ModuleNotFoundError: No module named 'jax'
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+    import jax
+ModuleNotFoundError: No module named 'jax'
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+    import jax
+ModuleNotFoundError: No module named 'jax'
+srun: error: nid004032: tasks 12-15: Exited with exit code 1
+srun: Terminating StepId=26930725.0
+srun: error: nid002876: tasks 0-3: Exited with exit code 1
+srun: error: nid003696: tasks 8-11: Exited with exit code 1
+srun: error: nid003500: tasks 4-7: Exited with exit code 1

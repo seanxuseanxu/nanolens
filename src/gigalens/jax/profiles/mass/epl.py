@@ -5,6 +5,8 @@ from jax import jit, lax
 
 import gigalens.profile
 
+import tensorflow_probability.substrates.jax as tfp
+tfd = tfp.distributions
 
 class EPL(gigalens.profile.MassProfile):
     _name = "EPL"

@@ -60,14 +60,19 @@ class ModellingSequence(gigalens.inference.ModellingSequenceInterface):
             updates, opt_state = optimizer.update(grads, opt_state)
             new_params = optax.apply_updates(params, updates)
             return chisq, new_params, opt_state
-
+        
+        chi=[]
         with trange(num_steps) as pbar:
             for _ in pbar:
                 loss, params, opt_state = update(params, opt_state)
+                
+                chi2=float(jnp.nanmin(loss, keepdims=True)[0])
+                
                 pbar.set_description(
-                    f"Chi-squared: {float(jnp.nanmin(loss, keepdims=True)):.3f}"
+                    f"Chi-squared: {chi2:.3f}"
                 )
-        return params
+                chi.append(chi2)
+        return params, chi
 
     def SVI(
             self,
@@ -194,3 +199,129 @@ class ModellingSequence(gigalens.inference.ModellingSequenceInterface):
         end = time.time()
         print(f"Sampling took {(end - start):.1f}s")
         return ret
+
+    
+    def david_HMC(
+            self,
+            q_z,
+            init_eps=0.3,
+            init_l=3,
+            n_hmc=50,
+            num_burnin_steps=250,
+            num_results=750,
+            max_leapfrog_steps=30,
+            seed=0,
+            accept=0.75,
+            num_steps_between_results=0,
+            return_final_kernel_results=True
+    ):
+        if return_final_kernel_results==True:
+            n_hmc=16
+        dev_cnt = jax.device_count()
+        seeds = jax.random.split(jax.random.PRNGKey(seed), dev_cnt)
+        n_hmc = (n_hmc // dev_cnt) * dev_cnt
+        lens_sim = sim.LensSimulator(
+            self.phys_model,
+            self.sim_config,
+            bs=n_hmc // dev_cnt,
+        )
+        momentum_distribution = tfd.MultivariateNormalFullCovariance(
+            loc=jnp.zeros_like(q_z.mean()),
+            covariance_matrix=jnp.linalg.inv(q_z.covariance()),
+        )
+        @jit
+        def log_prob(z):
+            return self.prob_model.log_prob(lens_sim, z)[0]
+        @pmap
+        def run_chain(seed):
+            start = q_z.sample(n_hmc // dev_cnt, seed=seed)
+            num_adaptation_steps = int(num_burnin_steps * 0.8)
+            mc_kernel = tfe.mcmc.PreconditionedHamiltonianMonteCarlo(
+                target_log_prob_fn=log_prob,
+                momentum_distribution=momentum_distribution,
+                step_size=init_eps,
+                num_leapfrog_steps=init_l,
+           )
+            print(1)
+            mc_kernel = tfe.mcmc.GradientBasedTrajectoryLengthAdaptation(
+               mc_kernel,
+                num_adaptation_steps=num_adaptation_steps,
+                max_leapfrog_steps=max_leapfrog_steps,
+            )
+            print(2)
+            mc_kernel = tfp.mcmc.DualAveragingStepSizeAdaptation(
+                inner_kernel=mc_kernel, num_adaptation_steps=num_adaptation_steps, target_accept_prob=accept
+            )
+            print(3)
+            return tfp.mcmc.sample_chain(
+                num_results=num_results,
+                num_burnin_steps=num_burnin_steps,
+                num_steps_between_results=num_steps_between_results,
+                current_state=start,
+                trace_fn=lambda _, pkr: None,
+                seed=seed,
+                kernel=mc_kernel,
+                return_final_kernel_results=return_final_kernel_results
+            )
+        start = time.time()
+        ret = run_chain(seeds)
+        end = time.time()
+        print(f"Sampling took {(end - start):.1f}s")
+        return ret
+    
+    def specialMAP(
+            self,
+            optimizer: optax.GradientTransformation,
+            start=None,
+            n_samples=500,
+            num_steps=350,
+            seed=0,
+    ):
+        dev_cnt = jax.device_count()
+        n_samples = (n_samples // dev_cnt) * dev_cnt
+        lens_sim = sim.LensSimulator(
+            self.phys_model,
+            self.sim_config,
+            bs=n_samples // dev_cnt,
+        )
+        seed = jax.random.PRNGKey(seed)
+
+        start = (
+            self.prob_model.prior.sample(n_samples, seed=seed)
+            if start is None
+            else start
+        )
+        params = jnp.stack(self.prob_model.bij.inverse(start)).T
+
+        opt_state = optimizer.init(params)
+
+        def loss(z):
+            lp, chisq = self.prob_model.log_prob(lens_sim, z)
+            return -jnp.mean(lp) / jnp.size(self.prob_model.observed_image), chisq
+
+        loss_and_grad = jax.pmap(jax.value_and_grad(loss, has_aux=True))
+
+        def update(params, opt_state):
+            splt_params = jnp.array(jnp.split(params, dev_cnt, axis=0))
+            (_, chisq), grads = loss_and_grad(splt_params)
+            grads = jnp.concatenate(grads, axis=0)
+            chisq = jnp.concatenate(chisq, axis=0)
+
+            updates, opt_state = optimizer.update(grads, opt_state)
+            new_params = optax.apply_updates(params, updates)
+            return chisq, new_params, opt_state
+        
+        chi=[]
+        allparams = jnp.array([])
+        with trange(num_steps) as pbar:
+            for _ in pbar:
+                loss, params, opt_state = update(params, opt_state)
+                
+                chi2=float(jnp.nanmin(loss, keepdims=True)[0])
+                
+                pbar.set_description(
+                    f"Chi-squared: {chi2:.3f}"
+                )
+                chi.append(chi2)
+                print(jnp.shape(loss),jnp.shape(params))
+        return params, chi

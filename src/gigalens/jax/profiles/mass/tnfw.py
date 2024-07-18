@@ -5,11 +5,13 @@ from jax import jit
 
 import gigalens.profile
 
+import tensorflow_probability.substrates.jax as tfp
+tfd = tfp.distributions
 
 class TNFW(gigalens.profile.MassProfile):
     _name = "TNFW"
     _params = ["Rs", "alpha_Rs", "r_trunc", "center_x", "center_y"]
-
+        
     @functools.partial(jit, static_argnums=(0,))
     def deriv(self, x, y, Rs, alpha_Rs, r_trunc, center_x, center_y):
         rho0 = alpha_Rs / (4.0 * Rs ** 2 * (1.0 + jnp.log(0.5)))

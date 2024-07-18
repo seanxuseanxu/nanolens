@@ -1,0 +1,10 @@
+Normal SVI failed, skipping...
+246_2024-07-09 10:38:35.317028
+
+[cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+
+[62, (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE'], ['SHAPELETS', 'SHAPELETS', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE'])]
+MAP took 2229.941858608974 seconds 
+
+log_prob took 342.0065225670114 seconds 
+

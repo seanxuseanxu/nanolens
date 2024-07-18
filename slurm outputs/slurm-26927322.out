@@ -1,0 +1,11 @@
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+slurmstepd: error: execve(): /global/u1/s/seanjx/gigalens/test.py: Exec format error
+srun: error: nid003833: tasks 0-3: Exited with exit code 8
+srun: Terminating StepId=26927322.0
+srun: error: nid008600: tasks 4-7: Exited with exit code 8

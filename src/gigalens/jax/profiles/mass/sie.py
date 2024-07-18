@@ -5,12 +5,14 @@ from jax import jit
 
 import gigalens.profile
 
+import tensorflow_probability.substrates.jax as tfp
+tfd = tfp.distributions
 
 class SIE(gigalens.profile.MassProfile):
     _name = "SIE"
     s_scale = 1e-4
     _params = ["theta_E", "e1", "e2", "center_x", "center_y"]
-
+        
     @functools.partial(jit, static_argnums=(0,))
     def _param_conv(self, theta_E, e1, e2):
         s_scale = 0

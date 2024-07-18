@@ -27,6 +27,9 @@ class PhysicalModel:
         self.lenses = lenses
         self.lens_light = lens_light
         self.source_light = source_light
+        
+    def getProfiles(self):
+        return self.lenses, self.lens_light, self.source_light
 
 
 class ProbabilisticModel(ABC):

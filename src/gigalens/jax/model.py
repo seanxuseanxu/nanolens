@@ -48,17 +48,17 @@ class ForwardProbModel(gigalens.model.ProbabilisticModel):
 
 class BackwardProbModel(gigalens.model.ProbabilisticModel):
     def __init__(
-            self, prior: tfd.Distribution, observed_image, background_rms, exp_time
+            self, prior: tfd.Distribution, observed_image, myOwnErrors, background_rms, exp_time
     ):
         super(BackwardProbModel, self).__init__(prior)
         err_map = jnp.sqrt(
-            background_rms ** 2 + jnp.clip(observed_image, 0, np.inf) / exp_time
+            background_rms ** 2 + jnp.clip(jnp.array(observed_image), 0, np.inf) / exp_time
         )
         self.observed_dist = tfd.Independent(
             tfd.Normal(observed_image, err_map), reinterpreted_batch_ndims=2
         )
         self.observed_image = jnp.array(observed_image)
-        self.err_map = jnp.array(err_map)
+        self.err_map = jnp.array(myOwnErrors)
         example = prior.sample(seed=random.PRNGKey(0))
         self.pack_bij = tfb.pack_sequence_as(example)
         self.bij = tfb.Chain(
@@ -72,7 +72,7 @@ class BackwardProbModel(gigalens.model.ProbabilisticModel):
     def log_prob(self, simulator: sim.LensSimulator, z):
         z = list(z.T)
         x = self.bij.forward(z)
-        im_sim = simulator.lstsq_simulate(x, self.observed_image, self.err_map)
+        im_sim = simulator.lstsq_simulate(x, self.observed_image, self.err_map)[0]
         log_like = self.observed_dist.log_prob(im_sim)
         log_prior = self.prior.log_prob(x) + self.bij.forward_log_det_jacobian(z)
         return log_like + log_prior, jnp.mean(

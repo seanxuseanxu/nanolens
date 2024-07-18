@@ -1,0 +1,26 @@
+2024-06-18 13:32:27.354746: W external/xla/xla/service/platform_util.cc:198] unable to create StreamExecutor for CUDA:2: failed initializing StreamExecutor for CUDA device ordinal 2: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+2024-06-18 13:32:27.458568: W external/xla/xla/service/platform_util.cc:198] unable to create StreamExecutor for CUDA:2: failed initializing StreamExecutor for CUDA device ordinal 2: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+Total devices: 1 Devices per task: 1
+[1.]
+Total devices: 1 Devices per task: 1
+[1.]
+2024-06-18 13:32:27.609584: W external/xla/xla/service/platform_util.cc:198] unable to create StreamExecutor for CUDA:3: failed initializing StreamExecutor for CUDA device ordinal 3: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+2024-06-18 13:32:27.611596: W external/xla/xla/service/platform_util.cc:198] unable to create StreamExecutor for CUDA:1: failed initializing StreamExecutor for CUDA device ordinal 1: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+Total devices: 1 Devices per task: 1
+[1.]
+Total devices: 1 Devices per task: 1
+[1.]
+2024-06-18 13:32:27.797370: W external/xla/xla/service/platform_util.cc:198] unable to create StreamExecutor for CUDA:1: failed initializing StreamExecutor for CUDA device ordinal 1: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+Total devices: 1 Devices per task: 1
+[1.]
+2024-06-18 13:32:27.897312: W external/xla/xla/service/platform_util.cc:198] unable to create StreamExecutor for CUDA:3: failed initializing StreamExecutor for CUDA device ordinal 3: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+Total devices: 1 Devices per task: 1
+[1.]
+slurmstepd: error: *** STEP 26928416.0 ON nid001093 CANCELLED AT 2024-06-18T20:37:04 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 26928416 ON nid001093 CANCELLED AT 2024-06-18T20:37:04 DUE TO TIME LIMIT ***

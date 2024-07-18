@@ -128,7 +128,7 @@ class LensSimulator(gigalens.simulator.LensSimulatorInterface):
         X = jnp.reshape((ret * W), (self.bs, -1, self.depth))
         Xt = jnp.transpose(X, (0, 2, 1))
         coeffs = (jnp.linalg.pinv(Xt @ X, rcond=1e-6) @ Xt @ Y)[..., 0]
-        if return_coeffs:
-            return coeffs
+        #if return_coeffs:
+            #return coeffs
         ret = jnp.sum(ret * coeffs[:, jnp.newaxis, jnp.newaxis, :], axis=-1)
-        return jnp.squeeze(ret)
+        return jnp.squeeze(ret), coeffs

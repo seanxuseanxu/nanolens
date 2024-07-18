@@ -1,0 +1,69 @@
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+srun: error: nid002628: tasks 4-7: Exited with exit code 1
+srun: Terminating StepId=26931422.0
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+  File "/global/u1/s/seanjx/gigalens/jax-demo-bigparallel.py", line 48
+    print(str(f"Total devices: {jax.device_count()}", f"Devices per task: {jax.local_device_count()}")
+         ^
+SyntaxError: '(' was never closed
+srun: error: nid001345: tasks 0-3: Exited with exit code 1
+srun: error: nid003912: tasks 12-15: Exited with exit code 1
+srun: error: nid003321: tasks 8-11: Exited with exit code 1
