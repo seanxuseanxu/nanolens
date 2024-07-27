@@ -3,13 +3,12 @@
 
 # In[1]:
 
-
 import os
 import time
 import sys
 import json
 from datetime import datetime
-sys.path.append("/global/homes/s/seanjx/gigalens/src")
+sys.path.append("/global/homes/s/seanjx/gigalens/srctest")
 
 from gigalens.jax.inference import ModellingSequence
 from gigalens.jax.model import ForwardProbModel, BackwardProbModel
@@ -35,18 +34,31 @@ from myfunctions import printToFile
 
 from corner import corner
 
+from mpi4py import MPI
+import mpi4jax
+
 tfd = tfp.distributions
 
 # In[2]:
+jax.distributed.initialize(local_device_ids=range(8))
+print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+print(f"Process {jax.process_index()} local devices : {jax.local_devices()}")
 
+comm = MPI.COMM_WORLD
+size = comm.Get_size()
+rank = comm.Get_rank()
+print(f"Process {jax.process_index()} rank: {rank}")
+if jax.process_index() == 0:
+    isRoot = True
+else: 
+    isRoot = False
 
 #create output directory
-now = "246_"+str(datetime.now())
-
-path = "output/"+now+"/"
-os.makedirs(path)
-print(now)
-
+if isRoot: 
+    now = time.time()
+    path = "output/"+str(now)+"/"
+    os.makedirs(path)
+    print(now)
 # In[3]:
 
 
@@ -72,14 +84,13 @@ error_masked[0:35,0:10]=np.where(observed_img[0:35,0:10]>0, 120000, error_masked
 error_masked[0:15,10:20]=np.where(observed_img[0:15,10:20]>0, 120000, error_masked[0:15,10:20])
 error_masked[100:110,100:110]=np.where(observed_img[100:110,100:110]>-0.1, 120000, error_masked[100:110,100:110])
 
-np.save(path+"/err_map.npy",err_map)
-print(np.min(observed_img))
+if isRoot: np.save(path+"err_map.npy",err_map)
 
 # In[4]:
 
 
 prior, phys_model = myfunctions.readJson("prior.json")[0:2]
-os.popen(f'cp prior.json "{path}prior.json"')
+if isRoot: os.popen(f'cp prior.json "{path}prior.json"')
 
 sim_config = SimulatorConfig(delta_pix=deltaPix, num_pix=numPix, supersample=1, kernel=psf)
 lens_sim = LensSimulator(phys_model, sim_config, bs=1)
@@ -99,88 +110,53 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 4000
+n_samples_bs = 100
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-4, 
-                                      power=0.5, transition_steps=1000)
+                                      power=0.5, transition_steps=50)
 opt = optax.chain(
   optax.scale_by_adam(),
   optax.scale_by_schedule(schedule_fn),
 )
 
-map_estimate, chi = model_seq.MAP(opt, n_samples=n_samples_bs,num_steps=1000,seed=0)
+map_estimate, chi = model_seq.MAP(opt, n_samples=n_samples_bs,num_steps=50,seed=0)
 end = time.perf_counter()
 MAPtime = end - start
 print(MAPtime)
 
 # In[ ]:
-np.save(path+"/map.npy",map_estimate)
-
-plt.figure(1)
-plt.style.use("default")
-plt.plot(np.array(chi))
-plt.savefig(path+"/chi-squared.png")
-
-# In[ ]:
 
 
 start = time.perf_counter()
-print(datetime.now())
-
-try:
-    lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=n_samples_bs), map_estimate)[0]
-    best = map_estimate[jnp.nanargmax(lps)][jnp.newaxis,:]
-except:
-    map_estimate=np.load(path+"/map.npy")
-    lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=n_samples_bs), map_estimate)[0]
-    best = map_estimate[jnp.nanargmax(lps)][jnp.newaxis,:]
-
+lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=n_samples_bs), map_estimate)[0]
+best = map_estimate[jnp.nanargmax(lps)][jnp.newaxis,:]
 end = time.perf_counter()
 logProbTime = end-start
 print(logProbTime)
+print("best ", best)
+allBest, token = mpi4jax.gather(best, 0, comm=comm)
 
-# In[ ]:
-params = prob_model.bij.forward(best.tolist()[0])
-simulated = lens_sim.lstsq_simulate(params,jnp.array(observed_img),err_map)[0]
-resid = jnp.array(observed_img) - simulated
-chi2 = np.sum((resid/err_map)**2)
-dof = len(np.reshape(err_map,-1)[np.reshape(err_map,-1)<1])-numParams
-MAPchi = chi2/dof
+if isRoot:
+    lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=2), allBest)[0]
+    bestOfAll = allBest[jnp.nanargmax(lps)]
+    print("allBest ", allBest)
+    print("bestOfAll ", bestOfAll)
+    params = prob_model.bij.forward(bestOfAll.tolist()[0])
+    simulated = lens_sim.lstsq_simulate(params,jnp.array(observed_img),err_map)[0]
+    resid = jnp.array(observed_img) - simulated
+    chi2 = np.sum((resid/err_map)**2)
+    dof = len(np.reshape(err_map,-1)[np.reshape(err_map,-1)<1])-numParams
+    MAPchi = chi2/dof
 
-np.save(path+"/best.npy",best)
+    np.save(path+"/best.npy",best)
 
-# In[ ]:
-params = prob_model.bij.forward(best.tolist()[0])
-simulated = lens_sim.lstsq_simulate(params,jnp.array(observed_img),err_map)[0]
-resid = jnp.array(observed_img) - simulated
-MAPchi = np.mean((resid/err_map)**2)
+best, token = mpi4jax.bcast(bestOfAll, root, comm=comm, token=token)
 
 start = time.perf_counter()
-steps=4000
+steps=100
 
-try:
-    schedule_fn = optax.polynomial_schedule(init_value=0, end_value=-1e-5, power=2, transition_steps=steps)
-    opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
-    qz, loss_hist = model_seq.SVI(best, opt, n_vi=500, num_steps=steps)
-        
-    plt.figure(2)
-    plt.plot(loss_hist)
-    plt.savefig(path+"/SVIloss.png")
-    
-    mean=qz.mean()
-    cov=qz.covariance()
-    scale = np.linalg.cholesky(cov)
-    
-    printToFile("Normal SVI success",path+"output.txt")
-except: 
-    
-    printToFile("Normal SVI failed, skipping...",path+"output.txt")
-    schedule_fn = optax.polynomial_schedule(init_value=0, end_value=-1e-15, power=2, transition_steps=500)
-    opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
-    qz, loss_histFAIL = model_seq.SVI(best, opt, n_vi=500, num_steps=500)
-    
-    mean=qz.mean()
-    cov=qz.covariance()
-    scale = np.linalg.cholesky(cov)
+schedule_fn = optax.polynomial_schedule(init_value=0, end_value=-1e-5, power=2, transition_steps=steps)
+opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
+qz, loss_hist = model_seq.SVI(best, opt, n_vi=500, num_steps=steps)
 
 end = time.perf_counter()
 SVItime = end-start

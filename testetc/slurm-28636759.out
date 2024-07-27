@@ -1,0 +1,61 @@
+No PMIx server was reachable, but a PMI1/2 was detected.
+If srun is being used to launch application,  2 singletons will be started.
+[nid002853:2222849] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid002853.105387/jf.0/3221422080/shared_mem_cuda_pool.nid002853 could be created.
+[nid002853:2222849] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+[nid002337:585392] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid002337.105387/jf.0/2353004544/shared_mem_cuda_pool.nid002337 could be created.
+[nid002337:585392] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+Process 0 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
+Process 0 local devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 54, in <module>
+    path = "output/"+now+"/"
+           ~~~~~~~~~^~~~
+TypeError: can only concatenate str (not "float") to str
+Process 1 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
+Process 1 local devices : [cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 61, in <module>
+    now, token = mpi4jax.recv(time.time(), source=0, comm=comm)
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/validation.py", line 90, in wrapped
+    return function(*args, **kwargs)
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/collective_ops/recv.py", line 97, in recv
+    mpi_recv_p.bind(x, token, source=source, tag=tag, comm=comm, status=status)
+jax._src.source_info_util.JaxStackTraceBeforeTransformation: ImportError: The mpi4jax GPU extensions could not be imported. Please re-build mpi4jax with CUDA support and try again.
+
+The preceding stack trace is the source of the JAX operation that, once transformed by JAX, triggered the following exception.
+
+--------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 61, in <module>
+    now, token = mpi4jax.recv(time.time(), source=0, comm=comm)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/validation.py", line 90, in wrapped
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/collective_ops/recv.py", line 97, in recv
+    mpi_recv_p.bind(x, token, source=source, tag=tag, comm=comm, status=status)
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/core.py", line 387, in bind
+    return self.bind_with_trace(find_top_trace(args), args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/core.py", line 391, in bind_with_trace
+    out = trace.process_primitive(self, map(trace.full_raise, args), params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/core.py", line 879, in process_primitive
+    return primitive.impl(*tracers, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/dispatch.py", line 86, in apply_primitive
+    outs = fun(*args)
+           ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/decorators.py", line 129, in wrapped
+    f()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/decorators.py", line 14, in ensure_cuda_ext
+    raise ImportError(
+ImportError: The mpi4jax GPU extensions could not be imported. Please re-build mpi4jax with CUDA support and try again.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+srun: error: nid002337: task 0: Exited with exit code 1
+srun: Terminating StepId=28636759.0
+srun: error: nid002853: task 1: Exited with exit code 1

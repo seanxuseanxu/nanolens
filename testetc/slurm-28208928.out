@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/global/homes/s/seanjx/gigalens/testetc/testparallel.py", line 1, in <module>
-    from mpi4py import MPI
-ImportError: No module named mpi4py

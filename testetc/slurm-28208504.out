@@ -1,7 +1,0 @@
-
-The following have been reloaded with a version change:
-  1) cudatoolkit/12.2 => cudatoolkit/11.7
-
-[nid008553:1170091] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid008553.105387/jf.0/3730636800/shared_mem_cuda_pool.nid008553 could be created.
-[nid008553:1170091] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
-('name', 'nid008553', 'rank', 0, 'own', array([0]), 'total', array([0]))

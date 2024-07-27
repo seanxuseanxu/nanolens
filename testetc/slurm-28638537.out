@@ -1,0 +1,31 @@
+No PMIx server was reachable, but a PMI1/2 was detected.
+If srun is being used to launch application,  2 singletons will be started.
+[nid002464:2338455] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid002464.105387/jf.0/1051197440/shared_mem_cuda_pool.nid002464 could be created.
+[nid002464:2338455] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+[nid002697:977540] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid002697.105387/jf.0/1156055040/shared_mem_cuda_pool.nid002697 could be created.
+[nid002697:977540] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/decorators.py:60: UserWarning: Not using CUDA-enabled MPI. If you are sure that your MPI library is built with CUDA support, set MPI4JAX_USE_CUDA_MPI=1. To silence this warning, set MPI4JAX_USE_CUDA_MPI=0.
+  warnings.warn(warn_msg)
+r0 | MPI_Send returned error code 6: b'MPI_ERR_RANK: invalid rank' - aborting
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+  Proc: [[16040,0],0]
+  Errorcode: 6
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+2024-07-26 21:56:04.988805: W external/tsl/tsl/distributed_runtime/preemption/preemption_sync_manager.cc:170] Failed to retrieve preemption notice from coordination service: UNAVAILABLE: Socket closed
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/GetKeyValue:
+:UNKNOWN:Error received from peer  {created_time:"2024-07-26T21:56:04.988136419-07:00", grpc_status:14, grpc_message:"Socket closed"}. This is only expected if one of the tasks is unhealthy. Check the logs for the actual root cause.
+2024-07-26 21:56:04.989453: E external/tsl/tsl/distributed_runtime/preemption/preemption_sync_manager.cc:182] Failed to cancel preemption barrier: UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:128.55.64.208:64841: Failed to connect to remote host: Connection refused
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/CancelBarrier:
+:UNKNOWN:Error received from peer  {created_time:"2024-07-26T21:56:04.989422214-07:00", grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:128.55.64.208:64841: Failed to connect to remote host: Connection refused"}
+/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/decorators.py:60: UserWarning: Not using CUDA-enabled MPI. If you are sure that your MPI library is built with CUDA support, set MPI4JAX_USE_CUDA_MPI=1. To silence this warning, set MPI4JAX_USE_CUDA_MPI=0.
+  warnings.warn(warn_msg)
+srun: error: nid002464: task 0: Exited with exit code 6
+srun: Terminating StepId=28638537.0
+2024-07-26 21:56:07.043231: W external/tsl/tsl/distributed_runtime/preemption/preemption_notifier.cc:89] SIGTERM caught at 2024-07-26T21:56:07.043178904-07:00
+srun: error: nid002697: task 1: Killed
+srun: Force Terminated StepId=28638537.0

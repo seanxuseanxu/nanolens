@@ -1,0 +1,39 @@
+No PMIx server was reachable, but a PMI1/2 was detected.
+If srun is being used to launch application,  2 singletons will be started.
+[nid002085:1433334] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid002085.105387/jf.0/2256535552/shared_mem_cuda_pool.nid002085 could be created.
+[nid002085:1433334] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+[nid002977:2265818] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid002977.105387/jf.0/2997092352/shared_mem_cuda_pool.nid002977 could be created.
+[nid002977:2265818] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
+Process 1 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
+Process 1 local devices : [cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 66, in <module>
+Process 0 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
+Process 0 local devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 66, in <module>
+    now, token = mpi4jax.bcast(time.time(),0,comm)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/validation.py", line 53, in wrapped
+    now, token = mpi4jax.bcast(time.time(),0,comm)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/mpi4jax/_src/validation.py", line 53, in wrapped
+    bound_args = func_sig.bind(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/inspect.py", line 3242, in bind
+    return self._bind(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/inspect.py", line 3168, in _bind
+    bound_args = func_sig.bind(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/inspect.py", line 3242, in bind
+    raise TypeError(
+TypeError: too many positional arguments
+    return self._bind(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/inspect.py", line 3168, in _bind
+    raise TypeError(
+TypeError: too many positional arguments
+srun: error: nid002085: task 0: Exited with exit code 1
+srun: Terminating StepId=28638782.0
+srun: error: nid002977: task 1: Exited with exit code 1
