@@ -1,34 +1,0 @@
-No PMIx server was reachable, but a PMI1/2 was detected.
-If srun is being used to launch application,  2 singletons will be started.
-[nid008317:2233092] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid008317.105387/jf.0/2764308480/shared_mem_cuda_pool.nid008317 could be created.
-[nid008317:2233092] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
-[nid008665:1582616] shmem: mmap: an error occurred while determining whether or not /tmp/ompi.nid008665.105387/jf.0/3661889536/shared_mem_cuda_pool.nid008665 could be created.
-[nid008665:1582616] create_and_attach: unable to create shared memory BTL coordinating structure :: size 134217728 
-Process 0 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
-Process 0 local devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
-1722059182.8949003
-Traceback (most recent call last):
-  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 60, in <module>
-    rootOnly(os.makedirs(path))
-  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 53, in rootOnly
-    func()
-TypeError: 'NoneType' object is not callable
-Process 1 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
-Process 1 local devices : [cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
-1722059182.8930147
-62 (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE'], ['SHAPELETS', 'SHAPELETS', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE', 'SERSIC_ELLIPSE'])
-4
-(62, 4000)
-(4000, 62)
-(4, 1000, 62)
-  0%|                                                                                                                                                                       | 0/50 [00:00<?, ?it/s]2024-07-26 22:46:43.683936: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng28{k2=3,k3=0} for conv (f32[1000,38,110,110]{3,2,1,0}, u8[0]{0}) custom-call(f32[1000,38,110,110]{3,2,1,0}, f32[38,1,27,27]{3,2,1,0}), window={size=27x27 pad=13_13x13_13}, dim_labels=bf01_oi01->bf01, feature_group_count=38, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
-2024-07-26 22:46:48.089743: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 5.405896066s
-Trying algorithm eng28{k2=3,k3=0} for conv (f32[1000,38,110,110]{3,2,1,0}, u8[0]{0}) custom-call(f32[1000,38,110,110]{3,2,1,0}, f32[38,1,27,27]{3,2,1,0}), window={size=27x27 pad=13_13x13_13}, dim_labels=bf01_oi01->bf01, feature_group_count=38, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
-2024-07-26 22:46:49.089952: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng1{k2=4,k3=0} for conv (f32[1000,38,110,110]{3,2,1,0}, u8[0]{0}) custom-call(f32[1000,38,110,110]{3,2,1,0}, f32[38,1,27,27]{3,2,1,0}), window={size=27x27 pad=13_13x13_13}, dim_labels=bf01_oi01->bf01, feature_group_count=38, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
-2024-07-26 22:46:52.868925: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 4.779141965s
-Trying algorithm eng1{k2=4,k3=0} for conv (f32[1000,38,110,110]{3,2,1,0}, u8[0]{0}) custom-call(f32[1000,38,110,110]{3,2,1,0}, f32[38,1,27,27]{3,2,1,0}), window={size=27x27 pad=13_13x13_13}, dim_labels=bf01_oi01->bf01, feature_group_count=38, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
-2024-07-26 22:46:54.773826: E external/xla/xla/service/slow_operation_alarm.cc:65] Trying algorithm eng4{} for conv (f32[1000,38,110,110]{3,2,1,0}, u8[0]{0}) custom-call(f32[1000,38,110,110]{3,2,1,0}, f32[38,1,27,27]{3,2,1,0}), window={size=27x27 pad=13_13x13_13}, dim_labels=bf01_oi01->bf01, feature_group_count=38, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
-2024-07-26 22:46:55.652281: E external/xla/xla/service/slow_operation_alarm.cc:133] The operation took 1.87862315s
-Trying algorithm eng4{} for conv (f32[1000,38,110,110]{3,2,1,0}, u8[0]{0}) custom-call(f32[1000,38,110,110]{3,2,1,0}, f32[38,1,27,27]{3,2,1,0}), window={size=27x27 pad=13_13x13_13}, dim_labels=bf01_oi01->bf01, feature_group_count=38, custom_call_target="__cudnn$convForward", backend_config={"conv_result_scale":1,"activation_mode":"kNone","side_input_scale":0,"leakyrelu_alpha":0} is taking a while...
-Chi-squared: 4.936:   0%|                                                                                                                                                   | 0/50 [00:55<?, ?it/s]Chi-squared: 4.936:   2%|##7                                                                                                                                        | 1/50 [00:55<45:25, 55.61s/it]Chi-squared: 4.609:   2%|##7                                                                                                                                        | 1/50 [00:57<45:25, 55.61s/it]Chi-squared: 4.609:   4%|#####5                                                                                                                                     | 2/50 [00:57<19:07, 23.90s/it]Chi-squared: 3.953:   4%|#####5                                                                                                                                     | 2/50 [00:59<19:07, 23.90s/it]Chi-squared: 3.953:   6%|########3         slurmstepd: error: *** STEP 28639656.0 ON nid008317 CANCELLED AT 2024-07-27T05:47:32 ***
-slurmstepd: error: *** JOB 28639656 ON nid008317 CANCELLED AT 2024-07-27T05:47:32 ***

@@ -38,9 +38,9 @@ from mpi4py import MPI
 import mpi4jax
 
 tfd = tfp.distributions
-
+numNodes = 4
 # In[2]:
-jax.distributed.initialize(local_device_ids=range(8))
+jax.distributed.initialize(local_device_ids=range(numNodes * 4))
 print(f"Process {jax.process_index()} global devices : {jax.devices()}")
 print(f"Process {jax.process_index()} local devices : {jax.local_devices()}")
 
@@ -63,29 +63,26 @@ if isRoot:
 
 
 #load observation data, do masking
-f=fits.open('psf246.fits') 
+f=fits.open('psf246.fits')
 psf=jnp.array(f[0].data)
-
-observed_img = np.load("cutout246.npy")
+psf = np.load('psf.npy').astype(np.float32)
+observed_img = np.float32(np.load("demo.npy"))
 
 f=fits.open('final_96_drz.fits')
-background_rms=0.00788315
-exp_time=f[0].header["EXPTIME"]
+#background_rms=0.00788315
+background_rms=0.2
+#exp_time=f[0].header["EXPTIME"]
+exp_time=100
 deltaPix = f[0].header["D002SCAL"]
 numPix = np.shape(observed_img)[0]
 
 err_map = np.sqrt(background_rms**2 + observed_img/exp_time)
 threshold_lens=1.
 error_masked=err_map
-#error_masked[45:65,45:65]=np.where(observed_img[45:65,45:65]>threshold_lens, 120000, error_masked[45:65,45:65]) #mask the lens
-# #error_masked[5:15,75:85]=np.where(observed_img[5:15,75:85]>0.3, 120000, error_masked[5:15,75:85])
-error_masked[66:70,33:37]=np.where(observed_img[66:70,33:37]>0, 120000, error_masked[66:70,33:37])
-error_masked[0:35,0:10]=np.where(observed_img[0:35,0:10]>0, 120000, error_masked[0:35,0:10])
-error_masked[0:15,10:20]=np.where(observed_img[0:15,10:20]>0, 120000, error_masked[0:15,10:20])
-error_masked[100:110,100:110]=np.where(observed_img[100:110,100:110]>-0.1, 120000, error_masked[100:110,100:110])
 
 if isRoot: np.save(path+"err_map.npy",err_map)
-
+print(type(psf),type(observed_img),type(err_map))
+print(psf.dtype,observed_img.dtype,err_map.dtype)
 # In[4]:
 
 
@@ -110,18 +107,27 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 100
-schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-4, 
-                                      power=0.5, transition_steps=50)
+n_samples_bs = 500
+schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-2/3, 
+                                      power=0.5, transition_steps=500)
 opt = optax.chain(
   optax.scale_by_adam(),
   optax.scale_by_schedule(schedule_fn),
 )
 
-map_estimate, chi = model_seq.MAP(opt, n_samples=n_samples_bs,num_steps=50,seed=0)
+map_estimate, chi = model_seq.MAP(opt, n_samples=n_samples_bs,num_steps=350,seed=0)
 end = time.perf_counter()
 MAPtime = end - start
-print(MAPtime)
+print(f"Rank {rank} MAP time: {MAPtime}")
+
+allChi, token = mpi4jax.gather(jnp.array(chi), 0, comm=comm)
+
+if isRoot:
+    plt.figure(1)
+    for ii in range(np.shape(allChi)[0]):
+        plt.plot(np.array(allChi[ii]))
+    plt.plot(np.min(allChi,axis=0))
+    plt.savefig(path+"/chi-squared.png")
 
 # In[ ]:
 
@@ -131,15 +137,13 @@ lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=n_samples_bs)
 best = map_estimate[jnp.nanargmax(lps)][jnp.newaxis,:]
 end = time.perf_counter()
 logProbTime = end-start
-print(logProbTime)
-print("best ", best)
-allBest, token = mpi4jax.gather(best, 0, comm=comm)
+print(f"Rank {rank} log_prob time: {logProbTime}")
+
+allBest, token = mpi4jax.gather(best, 0, comm=comm, token=token)
 
 if isRoot:
-    lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=2), allBest)[0]
+    lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=numNodes), allBest)[0]
     bestOfAll = allBest[jnp.nanargmax(lps)]
-    print("allBest ", allBest)
-    print("bestOfAll ", bestOfAll)
     params = prob_model.bij.forward(bestOfAll.tolist()[0])
     simulated = lens_sim.lstsq_simulate(params,jnp.array(observed_img),err_map)[0]
     resid = jnp.array(observed_img) - simulated
@@ -147,22 +151,32 @@ if isRoot:
     dof = len(np.reshape(err_map,-1)[np.reshape(err_map,-1)<1])-numParams
     MAPchi = chi2/dof
 
-    np.save(path+"/best.npy",best)
+    np.save(path+"/best.npy",bestOfAll)
+else:
+    bestOfAll = best
 
-best, token = mpi4jax.bcast(bestOfAll, root, comm=comm, token=token)
+best, token = mpi4jax.bcast(bestOfAll, 0, comm=comm, token=token)
 
 start = time.perf_counter()
 steps=100
 
-schedule_fn = optax.polynomial_schedule(init_value=0, end_value=-1e-5, power=2, transition_steps=steps)
+schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-3e-3, power=2, transition_steps=300)
 opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
-qz, loss_hist = model_seq.SVI(best, opt, n_vi=500, num_steps=steps)
+qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=500, num_steps=1500)
 
 end = time.perf_counter()
 SVItime = end-start
 
 print(SVItime)
+allloss_hist_individual, token = mpi4jax.gather(jnp.array(loss_hist_individual),0,comm=comm,token=token)
+allloss_hist, token = mpi4jax.gather(jnp.array(loss_hist),0,comm=comm,token=token)
 
+if isRoot:
+    plt.figure(2)
+    for ii in range(np.shape(allloss_hist_individual)[0]):
+        plt.plot(np.array(allloss_hist_individual[ii]))
+    plt.plot(allloss_hist[0])
+    plt.savefig(path+"/SVIloss.png")
 # In[ ]:
 
 
