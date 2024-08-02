@@ -1,0 +1,28 @@
+2024-07-28 13:22:55.867000: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-07-28 13:22:55.867028: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-07-28 13:22:55.867015: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-07-28 13:22:55.867050: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-07-28 13:22:55.976071: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-07-28 13:22:55.976599: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 17, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 17, in <module>
+    import gigalens.jax.simulator as sim
+    import gigalens.jax.simulator as sim
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/simulator.py", line 10, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/simulator.py", line 10, in <module>
+    from objax.constants import ConvPadding
+ModuleNotFoundError: No module named 'objax'
+    from objax.constants import ConvPadding
+ModuleNotFoundError: No module named 'objax'
+srun: error: nid008620: task 2: Exited with exit code 1
+srun: Terminating StepId=28707025.0
+srun: error: nid004005: task 0: Exited with exit code 1
+srun: error: nid008621: task 3: Terminated
+srun: error: nid008617: task 1: Terminated
+srun: Force Terminated StepId=28707025.0

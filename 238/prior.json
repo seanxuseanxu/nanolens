@@ -159,8 +159,8 @@
                     "stdev": 0.5
                 },
                 "n_sersic": {
-                    "lowerBound": 1,
-                    "upperBound": 10
+                    "lowerBound": 0.5,
+                    "upperBound": 15
                 },
                 "e1": {
                     "mean": 0,
@@ -192,8 +192,8 @@
                     "stdev": 0.5
                 },
                 "n_sersic": {
-                    "lowerBound": 1,
-                    "upperBound": 10
+                    "lowerBound": 0.5,
+                    "upperBound": 15
                 },
                 "e1": {
                     "mean": 0,

@@ -1,0 +1,21 @@
+2024-07-28 13:31:05.591877: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-07-28 13:31:05.591907: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-07-28 13:31:05.687291: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-07-28 13:31:05.893909: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-07-28 13:31:05.893941: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-07-28 13:31:05.999724: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 17, in <module>
+    import gigalens.jax.simulator as sim
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/simulator.py", line 10, in <module>
+    from objax.constants import ConvPadding
+ModuleNotFoundError: No module named 'objax'
+srun: error: nid001765: task 3: Exited with exit code 1
+srun: Terminating StepId=28707225.0
+slurmstepd: error: *** STEP 28707225.0 ON nid001032 CANCELLED AT 2024-07-28T20:31:38 ***
+srun: error: nid001745: task 2: Terminated
+srun: error: nid001032: task 0: Terminated
+srun: error: nid001656: task 1: Terminated
+srun: Force Terminated StepId=28707225.0

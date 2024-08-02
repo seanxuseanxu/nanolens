@@ -122,39 +122,6 @@
             "name": "SERSIC_ELLIPSE",
             "params": {
                 "R_sersic": {
-                    "mean": 0.1,
-                    "stdev": 0.1
-                },
-                "n_sersic": {
-                    "lowerBound": 1,
-                    "upperBound": 10
-                },
-                "e1": {
-                    "mean": 0,
-                    "stdev": 0.1,
-                    "lowerBound": -0.3,
-                    "upperBound": 0.3
-                },
-                "e2": {
-                    "mean": 0,
-                    "stdev": 0.1,
-                    "lowerBound": -0.3,
-                    "upperBound": 0.3
-                },
-                "center_x": {
-                    "mean": 3,
-                    "stdev": 0.1
-                },
-                "center_y": {
-                    "mean": 0,
-                    "stdev": 0.1
-                }
-            }
-        },
-        {
-            "name": "SERSIC_ELLIPSE",
-            "params": {
-                "R_sersic": {
                     "mean": 0.05,
                     "stdev": 0.05
                 },

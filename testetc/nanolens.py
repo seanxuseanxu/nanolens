@@ -38,7 +38,7 @@ from mpi4py import MPI
 import mpi4jax
 
 tfd = tfp.distributions
-numNodes = 4
+numNodes = 2
 # In[2]:
 jax.distributed.initialize(local_device_ids=range(numNodes * 4))
 print(f"Process {jax.process_index()} global devices : {jax.devices()}")
@@ -107,7 +107,7 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 500
+n_samples_bs = 2000
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-2/3, 
                                       power=0.5, transition_steps=500)
 opt = optax.chain(
@@ -133,7 +133,7 @@ if isRoot:
 
 
 start = time.perf_counter()
-lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=n_samples_bs), map_estimate)[0]
+lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=n_samples_bs//numNodes), map_estimate)[0]
 best = map_estimate[jnp.nanargmax(lps)][jnp.newaxis,:]
 end = time.perf_counter()
 logProbTime = end-start
@@ -162,7 +162,7 @@ steps=100
 
 schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-3e-3, power=2, transition_steps=300)
 opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
-qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=500, num_steps=1500)
+qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=2000, num_steps=1500)
 
 end = time.perf_counter()
 SVItime = end-start

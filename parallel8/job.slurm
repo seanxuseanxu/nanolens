@@ -6,7 +6,7 @@
 #SBATCH -J parallel8
 #SBATCH --mail-user=seanjx@lbl.gov
 #SBATCH --mail-type=ALL
-#SBATCH -t 4:00:00
+#SBATCH -t 24:00:00
 #SBATCH -A m3592
 
 #OpenMP settings:

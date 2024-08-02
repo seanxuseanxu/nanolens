@@ -1,0 +1,30 @@
+
+The following have been reloaded with a version change:
+  1) cudatoolkit/12.2 => cudatoolkit/11.7
+
+238_2024-07-19 17:07:51.041950
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/238/nanolens.py", line 55, in <module>
+    psf=jnp.array(f[0].data)
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/numpy/lax_numpy.py", line 2592, in array
+    out_array: Array = lax_internal._convert_element_type(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/lax/lax.py", line 559, in _convert_element_type
+    return convert_element_type_p.bind(operand, new_dtype=new_dtype,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/core.py", line 387, in bind
+    return self.bind_with_trace(find_top_trace(args), args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/core.py", line 391, in bind_with_trace
+    out = trace.process_primitive(self, map(trace.full_raise, args), params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/core.py", line 879, in process_primitive
+    return primitive.impl(*tracers, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax/lib/python3.12/site-packages/jax/_src/dispatch.py", line 86, in apply_primitive
+    outs = fun(*args)
+           ^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: XLA requires ptxas version 11.8 or higher
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

@@ -66,7 +66,7 @@ err_map = np.sqrt(background_rms**2 + observed_img/exp_time)
 threshold_lens=1.
 error_masked=err_map
 #error_masked[45:65,45:65]=np.where(observed_img[45:65,45:65]>threshold_lens, 120000, error_masked[45:65,45:65]) #mask the lens
-# #error_masked[5:15,75:85]=np.where(observed_img[5:15,75:85]>0.3, 120000, error_masked[5:15,75:85])
+error_masked[2:18,72:88]=np.where(observed_img[2:18,72:88]>0.1, 120000, error_masked[2:18,72:88])
 error_masked[66:70,33:37]=np.where(observed_img[66:70,33:37]>0, 120000, error_masked[66:70,33:37])
 error_masked[0:35,0:10]=np.where(observed_img[0:35,0:10]>0, 120000, error_masked[0:35,0:10])
 error_masked[0:15,10:20]=np.where(observed_img[0:15,10:20]>0, 120000, error_masked[0:15,10:20])
@@ -99,7 +99,7 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 4000
+n_samples_bs = 1000
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-4, 
                                       power=0.5, transition_steps=1000)
 opt = optax.chain(
@@ -158,7 +158,7 @@ start = time.perf_counter()
 steps=8000
 
 try:
-    schedule_fn = optax.polynomial_schedule(init_value=0, end_value=-1e-5, power=2, transition_steps=steps)
+    schedule_fn = optax.polynomial_schedule(init_value=0, end_value=-1e-5, power=0.5, transition_steps=steps)
     opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
     qz, loss_hist = model_seq.SVI(best, opt, n_vi=500, num_steps=steps)
         

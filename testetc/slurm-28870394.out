@@ -1,0 +1,3 @@
+slurmstepd: error: execve(): /global/homes/s/seanjx/gigalens/testetc/nanolensNOparallelization.py: Permission denied
+srun: error: nid008429: task 0: Exited with exit code 13
+srun: Terminating StepId=28870394.0

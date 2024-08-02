@@ -155,7 +155,7 @@ resid = jnp.array(observed_img) - simulated
 MAPchi = np.mean((resid/err_map)**2)
 
 start = time.perf_counter()
-steps=10000
+steps=5000
 
 try:
     schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-1e-5, power=0.5, transition_steps=steps)

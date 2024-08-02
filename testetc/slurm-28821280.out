@@ -1,0 +1,70 @@
+/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/mpi4jax/_src/jax_compat.py:39: UserWarning: 
+The latest supported JAX version with this release of mpi4jax is 0.4.30, but you have 0.4.31. If you encounter problems consider downgrading JAX, for example via:
+
+    $ pip install jax[cpu]==0.4.30
+
+Or try upgrading mpi4jax via
+
+    $ pip install -U mpi4jax
+
+You can set the environment variable `MPI4JAX_NO_WARN_JAX_VERSION=1` to silence this warning.
+  warnings.warn(
+/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/mpi4jax/_src/jax_compat.py:39: UserWarning: 
+The latest supported JAX version with this release of mpi4jax is 0.4.30, but you have 0.4.31. If you encounter problems consider downgrading JAX, for example via:
+
+    $ pip install jax[cpu]==0.4.30
+
+Or try upgrading mpi4jax via
+
+    $ pip install -U mpi4jax
+
+You can set the environment variable `MPI4JAX_NO_WARN_JAX_VERSION=1` to silence this warning.
+  warnings.warn(
+2024-07-30 19:26:36.410841: W external/xla/xla/service/gpu/nvptx_compiler.cc:836] The NVIDIA driver's CUDA version is 12.2 which is older than the PTX compiler version (12.5.82). Because the driver is older than the PTX compiler version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+2024-07-30 19:26:36.425303: W external/xla/xla/service/gpu/nvptx_compiler.cc:836] The NVIDIA driver's CUDA version is 12.2 which is older than the PTX compiler version (12.5.82). Because the driver is older than the PTX compiler version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+Process 0 global devices : [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2), CudaDevice(id=3), CudaDevice(id=4), CudaDevice(id=5), CudaDevice(id=6), CudaDevice(id=7)]
+Process 0 local devices : [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2), CudaDevice(id=3)]
+Process 0 rank: 0
+1722392796.0666552
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+20 (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE'], ['SERSIC_ELLIPSE'])
+4
+Process 1 global devices : [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2), CudaDevice(id=3), CudaDevice(id=4), CudaDevice(id=5), CudaDevice(id=6), CudaDevice(id=7)]
+Process 1 local devices : [CudaDevice(id=4), CudaDevice(id=5), CudaDevice(id=6), CudaDevice(id=7)]
+Process 1 rank: 0
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+20 (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE'], ['SERSIC_ELLIPSE'])
+4
+  0%|                                                                                                                                                             | 0/350 [00:00<?, ?it/s]  0%|                                                                                                                                                             | 0/350 [00:04<?, ?it/s]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118, in <module>
+    map_estimate, chi = model_seq.MAP(opt, n_samples=n_samples_bs,num_steps=350,seed=0)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 70, in MAP
+    loss, params, opt_state = update(params, opt_state)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 59, in update
+    (_, chisq), grads = loss_and_grad(splt_params)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: GetKeyValue() timed out with key: cuda:gemm_fusion_autotuning_results_141_0 and duration: -1ms
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+  0%|                                                                                                                                                             | 0/350 [00:00<?, ?it/s]  0%|                                                                                                                                                             | 0/350 [00:04<?, ?it/s]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118, in <module>
+    map_estimate, chi = model_seq.MAP(opt, n_samples=n_samples_bs,num_steps=350,seed=0)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 70, in MAP
+    loss, params, opt_state = update(params, opt_state)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 59, in update
+    (_, chisq), grads = loss_and_grad(splt_params)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: GetKeyValue() timed out with key: cuda:gemm_fusion_autotuning_results_141_1 and duration: -1ms
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+srun: error: nid001020: task 0: Exited with exit code 1
+srun: Terminating StepId=28821280.0
+srun: error: nid001021: task 1: Exited with exit code 1

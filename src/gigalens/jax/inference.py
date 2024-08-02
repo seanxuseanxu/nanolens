@@ -215,8 +215,8 @@ class ModellingSequence(gigalens.inference.ModellingSequenceInterface):
             num_steps_between_results=0,
             return_final_kernel_results=True
     ):
-        if return_final_kernel_results==True:
-            n_hmc=16
+        # if return_final_kernel_results==True:
+        #     n_hmc=16
         dev_cnt = jax.device_count()
         seeds = jax.random.split(jax.random.PRNGKey(seed), dev_cnt)
         n_hmc = (n_hmc // dev_cnt) * dev_cnt
@@ -312,7 +312,7 @@ class ModellingSequence(gigalens.inference.ModellingSequenceInterface):
             return chisq, new_params, opt_state
         
         chi=[]
-        allparams = jnp.array([])
+        paramslist = []
         with trange(num_steps) as pbar:
             for _ in pbar:
                 loss, params, opt_state = update(params, opt_state)
@@ -322,6 +322,6 @@ class ModellingSequence(gigalens.inference.ModellingSequenceInterface):
                 pbar.set_description(
                     f"Chi-squared: {chi2:.3f}"
                 )
+                paramslist.append(params)
                 chi.append(chi2)
-                print(jnp.shape(loss),jnp.shape(params))
-        return params, chi
+        return paramslist, chi

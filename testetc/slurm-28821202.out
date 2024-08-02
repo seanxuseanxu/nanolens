@@ -1,0 +1,133 @@
+
+Lmod is automatically replacing "cray-mpich/8.1.28" with "openmpi/5.0.3".
+
+/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/mpi4jax/_src/jax_compat.py:39: UserWarning: 
+The latest supported JAX version with this release of mpi4jax is 0.4.30, but you have 0.4.31. If you encounter problems consider downgrading JAX, for example via:
+
+    $ pip install jax[cpu]==0.4.30
+
+Or try upgrading mpi4jax via
+
+    $ pip install -U mpi4jax
+
+You can set the environment variable `MPI4JAX_NO_WARN_JAX_VERSION=1` to silence this warning.
+  warnings.warn(
+/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/mpi4jax/_src/jax_compat.py:39: UserWarning: 
+The latest supported JAX version with this release of mpi4jax is 0.4.30, but you have 0.4.31. If you encounter problems consider downgrading JAX, for example via:
+
+    $ pip install jax[cpu]==0.4.30
+
+Or try upgrading mpi4jax via
+
+    $ pip install -U mpi4jax
+
+You can set the environment variable `MPI4JAX_NO_WARN_JAX_VERSION=1` to silence this warning.
+  warnings.warn(
+2024-07-30 19:23:26.513061: W external/xla/xla/service/gpu/nvptx_compiler.cc:836] The NVIDIA driver's CUDA version is 12.2 which is older than the PTX compiler version (12.5.82). Because the driver is older than the PTX compiler version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+2024-07-30 19:23:26.583195: W external/xla/xla/service/gpu/nvptx_compiler.cc:836] The NVIDIA driver's CUDA version is 12.2 which is older than the PTX compiler version (12.5.82). Because the driver is older than the PTX compiler version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+Process 0 global devices : [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2), CudaDevice(id=3), CudaDevice(id=4), CudaDevice(id=5), CudaDevice(id=6), CudaDevice(id=7)]
+Process 0 local devices : [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2), CudaDevice(id=3)]
+Process 0 rank: 0
+1722392606.1980476
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 89, in <module>
+    prior, phys_model = myfunctions.readJson("prior.json")[0:2]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/u1/s/seanjx/gigalens/testetc/myfunctions.py", line 131, in readJson
+    paramDict[iii] = tfd.LogNormal(jnp.log(currentParameter["mean"]),currentParameter["stdev"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/distribution.py", line 342, in wrapped_init
+    default_init(self_, *args, **kwargs)
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/lognormal.py", line 68, in __init__
+    super(LogNormal, self).__init__(
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/distribution.py", line 342, in wrapped_init
+    default_init(self_, *args, **kwargs)
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/transformed_distribution.py", line 244, in __init__
+    dtype = self.bijector.forward_dtype(self.distribution.dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/bijectors/bijector.py", line 1705, in forward_dtype
+    input_dtype = nest.map_structure_up_to(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/python/internal/backend/jax/nest.py", line 324, in map_structure_up_to
+    return map_structure_with_tuple_paths_up_to(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/python/internal/backend/jax/nest.py", line 353, in map_structure_with_tuple_paths_up_to
+    return dm_tree.map_structure_with_path_up_to(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tree/__init__.py", line 778, in map_structure_with_path_up_to
+    results.append(func(*path_and_values))
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/python/internal/backend/jax/nest.py", line 326, in <lambda>
+    lambda _, *args: func(*args),  # Discards path.
+                     ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/bijectors/bijector.py", line 1707, in <lambda>
+Process 1 global devices : [CudaDevice(id=0), CudaDevice(id=1), CudaDevice(id=2), CudaDevice(id=3), CudaDevice(id=4), CudaDevice(id=5), CudaDevice(id=6), CudaDevice(id=7)]
+Process 1 local devices : [CudaDevice(id=4), CudaDevice(id=5), CudaDevice(id=6), CudaDevice(id=7)]
+Process 1 rank: 0
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 89, in <module>
+    lambda x: dtype_util.convert_to_dtype(x, dtype=self.dtype),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/internal/dtype_util.py", line 247, in convert_to_dtype
+    prior, phys_model = myfunctions.readJson("prior.json")[0:2]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/u1/s/seanjx/gigalens/testetc/myfunctions.py", line 131, in readJson
+    paramDict[iii] = tfd.LogNormal(jnp.log(currentParameter["mean"]),currentParameter["stdev"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    elif np.issctype(tensor_or_dtype):
+         ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/numpy/__init__.py", line 397, in __getattr__
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/distribution.py", line 342, in wrapped_init
+    raise AttributeError(
+AttributeError: `np.issctype` was removed in the NumPy 2.0 release. Use `issubclass(rep, np.generic)` instead.. Did you mean: 'isdtype'?
+    default_init(self_, *args, **kwargs)
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/lognormal.py", line 68, in __init__
+    super(LogNormal, self).__init__(
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/distribution.py", line 342, in wrapped_init
+    default_init(self_, *args, **kwargs)
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/distributions/transformed_distribution.py", line 244, in __init__
+    dtype = self.bijector.forward_dtype(self.distribution.dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/bijectors/bijector.py", line 1705, in forward_dtype
+    input_dtype = nest.map_structure_up_to(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/python/internal/backend/jax/nest.py", line 324, in map_structure_up_to
+    return map_structure_with_tuple_paths_up_to(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/python/internal/backend/jax/nest.py", line 353, in map_structure_with_tuple_paths_up_to
+    return dm_tree.map_structure_with_path_up_to(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tree/__init__.py", line 778, in map_structure_with_path_up_to
+    results.append(func(*path_and_values))
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/python/internal/backend/jax/nest.py", line 326, in <lambda>
+    lambda _, *args: func(*args),  # Discards path.
+                     ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/bijectors/bijector.py", line 1707, in <lambda>
+    lambda x: dtype_util.convert_to_dtype(x, dtype=self.dtype),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/tensorflow_probability/substrates/jax/internal/dtype_util.py", line 247, in convert_to_dtype
+    elif np.issctype(tensor_or_dtype):
+         ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/numpy/__init__.py", line 397, in __getattr__
+    raise AttributeError(
+AttributeError: `np.issctype` was removed in the NumPy 2.0 release. Use `issubclass(rep, np.generic)` instead.. Did you mean: 'isdtype'?
+srun: error: nid001636: task 1: Exited with exit code 1
+srun: Terminating StepId=28821202.0
+srun: error: nid001164: task 0: Exited with exit code 1
