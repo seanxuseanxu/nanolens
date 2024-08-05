@@ -1,0 +1,216 @@
+
+The following have been reloaded with a version change:
+  1) cudatoolkit/11.7 => cudatoolkit/12.2
+
+
+The following have been reloaded with a version change:
+  1) cudnn/8.9.1_cuda11 => cudnn/8.9.3_cuda12
+
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 442, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]
+Process 0 global devices : [CpuDevice(id=0)]
+Process 0 local devices : [CpuDevice(id=0)]
+[0.41845703]
+[0.41845703]

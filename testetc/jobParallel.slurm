@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH -N 2
+#SBATCH -N 4
 #SBATCH -C gpu
-#SBATCH -G 8
+#SBATCH -G 16
 #SBATCH -q debug
-#SBATCH -J testetcSRUN
+#SBATCH -J jobParallel
 #SBATCH --mail-user=seanjx@lbl.gov
 #SBATCH --mail-type=ALL
 #SBATCH -t 30:00
@@ -19,8 +19,8 @@ module load cudatoolkit/12.2
 module load cudnn/8.9.3_cuda12
 
 export PMIX_MCA_psec=^munge
-export MPI4JAX_USE_CUDA_MPI=1
+export MPI4JAX_USE_CUDA_MPI=0
 
-conda activate /global/homes/s/seanjx/.conda/envs/gigajax2.0
+conda activate /global/homes/s/seanjx/.conda/envs/gigajaxtest2.0
 
-srun -n 2 --mpi=pmix --gpus-per-task=4 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolens.py
+srun -n 16 --mpi=pmix --gpus-per-task=1 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolens.py

@@ -1,0 +1,21 @@
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118
+    with jax.profile.trace("jax-trace",create_perfetto_link=True)
+                                                                 ^
+SyntaxError: expected ':'
+srun: error: nid002497: task 0: Exited with exit code 1
+srun: Terminating StepId=28925480.0
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118
+    with jax.profile.trace("jax-trace",create_perfetto_link=True)
+                                                                 ^
+SyntaxError: expected ':'
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118
+    with jax.profile.trace("jax-trace",create_perfetto_link=True)
+                                                                 ^
+SyntaxError: expected ':'
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118
+    with jax.profile.trace("jax-trace",create_perfetto_link=True)
+                                                                 ^
+SyntaxError: expected ':'
+srun: error: nid002689: task 1: Exited with exit code 1
+srun: error: nid003089: task 2: Exited with exit code 1
+srun: error: nid003196: task 3: Exited with exit code 1

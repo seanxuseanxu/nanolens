@@ -1,5 +1,0 @@
---------------------------------------------------------------------------
-A suitable debugger could not be found in your PATH.  Check the values
-specified in the orte_base_user_debugger MCA parameter for the list of
-debuggers that was searched.
---------------------------------------------------------------------------

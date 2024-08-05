@@ -151,7 +151,10 @@ class ModellingSequence(gigalens.inference.ModellingSequenceInterface):
                 loss = float(jnp.mean(allLoss))
                 grads = jnp.mean(allGrads, axis=0)
                 
-                loss = float(jnp.mean(loss))
+                # print(jnp.shape(loss),jnp.shape(grads))
+                # loss = float(jnp.mean(loss))
+                # grads = jnp.mean(grads, axis=0)
+                
                 seeds = jax.random.split(seeds[0], dev_cnt)
                 updates, opt_state = optimizer.update(grads, opt_state)
                 replicated_params = optax.apply_updates(replicated_params, updates)

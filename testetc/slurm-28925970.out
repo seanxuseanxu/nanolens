@@ -1,0 +1,62 @@
+2024-08-02 17:51:35.690978: W external/xla/xla/service/gpu/nvptx_compiler.cc:765] The NVIDIA driver's CUDA version is 12.2 which is older than the ptxas CUDA version (12.5.82). Because the driver is older than the ptxas version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+2024-08-02 17:51:35.756419: W external/xla/xla/service/gpu/nvptx_compiler.cc:765] The NVIDIA driver's CUDA version is 12.2 which is older than the ptxas CUDA version (12.5.82). Because the driver is older than the ptxas version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+2024-08-02 17:51:35.958689: W external/xla/xla/service/gpu/nvptx_compiler.cc:765] The NVIDIA driver's CUDA version is 12.2 which is older than the ptxas CUDA version (12.5.82). Because the driver is older than the ptxas version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+2024-08-02 17:51:36.049765: W external/xla/xla/service/gpu/nvptx_compiler.cc:765] The NVIDIA driver's CUDA version is 12.2 which is older than the ptxas CUDA version (12.5.82). Because the driver is older than the ptxas version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.
+Process 3 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7), cuda(id=8), cuda(id=9), cuda(id=10), cuda(id=11), cuda(id=12), cuda(id=13), cuda(id=14), cuda(id=15)]
+Process 3 local devices : [cuda(id=12), cuda(id=13), cuda(id=14), cuda(id=15)]
+Process 3 rank: 0
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+20 (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE'], ['SERSIC_ELLIPSE'])
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118, in <module>
+    with jax.profile.trace("jax-trace",create_perfetto_link=True):
+         ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+AttributeError: module 'jax' has no attribute 'profile'. Did you mean: 'profiler'?
+Process 1 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7), cuda(id=8), cuda(id=9), cuda(id=10), cuda(id=11), cuda(id=12), cuda(id=13), cuda(id=14), cuda(id=15)]
+Process 1 local devices : [cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7)]
+Process 1 rank: 0
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+20 (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE'], ['SERSIC_ELLIPSE'])
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118, in <module>
+    with jax.profile.trace("jax-trace",create_perfetto_link=True):
+         ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+AttributeError: module 'jax' has no attribute 'profile'. Did you mean: 'profiler'?
+Process 2 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7), cuda(id=8), cuda(id=9), cuda(id=10), cuda(id=11), cuda(id=12), cuda(id=13), cuda(id=14), cuda(id=15)]
+Process 2 local devices : [cuda(id=8), cuda(id=9), cuda(id=10), cuda(id=11)]
+Process 2 rank: 0
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+20 (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE'], ['SERSIC_ELLIPSE'])
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118, in <module>
+    with jax.profile.trace("jax-trace",create_perfetto_link=True):
+         ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+AttributeError: module 'jax' has no attribute 'profile'. Did you mean: 'profiler'?
+Process 0 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3), cuda(id=4), cuda(id=5), cuda(id=6), cuda(id=7), cuda(id=8), cuda(id=9), cuda(id=10), cuda(id=11), cuda(id=12), cuda(id=13), cuda(id=14), cuda(id=15)]
+Process 0 local devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+Process 0 rank: 0
+1722646295.7757092
+<class 'numpy.ndarray'> <class 'numpy.ndarray'> <class 'numpy.ndarray'>
+float32 float32 float32
+20 (['EPL', 'SHEAR'], ['SERSIC_ELLIPSE'], ['SERSIC_ELLIPSE'])
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 118, in <module>
+    with jax.profile.trace("jax-trace",create_perfetto_link=True):
+         ^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+AttributeError: module 'jax' has no attribute 'profile'. Did you mean: 'profiler'?
+srun: error: nid001260: task 2: Exited with exit code 1
+srun: Terminating StepId=28925970.0
+srun: error: nid001257: task 1: Exited with exit code 1
+srun: error: nid001261: task 3: Exited with exit code 1
+srun: error: nid001009: task 0: Exited with exit code 1

@@ -1,0 +1,45 @@
+
+The following have been reloaded with a version change:
+  1) cudnn/8.9.1_cuda11 => cudnn/8.9.3_cuda12
+
+Process 0 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+Process 0 local devices : [cuda(id=0)]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 10, in <module>
+    key = jax.random.PRNGKey(jax.process_id())
+                             ^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+Process 3 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+Process 3 local devices : [cuda(id=3)]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 10, in <module>
+Process 1 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+Process 1 local devices : [cuda(id=1)]
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+Process 2 global devices : [cuda(id=0), cuda(id=1), cuda(id=2), cuda(id=3)]
+Process 2 local devices : [cuda(id=2)]
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 10, in <module>
+AttributeError: module 'jax' has no attribute 'process_id'. Did you mean: 'process_index'?
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 10, in <module>
+    key = jax.random.PRNGKey(jax.process_id())
+                             ^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+    key = jax.random.PRNGKey(jax.process_id())
+                             ^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+    key = jax.random.PRNGKey(jax.process_id())
+                             ^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/deprecations.py", line 55, in getattr
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+AttributeError: module 'jax' has no attribute 'process_id'. Did you mean: 'process_index'?
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+AttributeError: module 'jax' has no attribute 'process_id'. Did you mean: 'process_index'?
+    raise AttributeError(f"module {module!r} has no attribute {name!r}")
+AttributeError: module 'jax' has no attribute 'process_id'. Did you mean: 'process_index'?
+srun: error: nid008324: task 2: Exited with exit code 1
+srun: Terminating StepId=29046311.0
+srun: error: nid003360: task 0: Exited with exit code 1
+srun: error: nid008641: task 3: Exited with exit code 1
+srun: error: nid003513: task 1: Exited with exit code 1

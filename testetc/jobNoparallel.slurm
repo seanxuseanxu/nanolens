@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH -N 1
+#SBATCH -N 4
 #SBATCH -C gpu
-#SBATCH -G 4
+#SBATCH -G 16
 #SBATCH -q debug
 #SBATCH -J testetcSRUN
 #SBATCH --mail-user=seanjx@lbl.gov
@@ -23,4 +23,4 @@ export MPI4JAX_USE_CUDA_MPI=1
 
 conda activate /global/homes/s/seanjx/.conda/envs/gigajax2.0
 
-srun -n 1 --mpi=pmix --gpus-per-task=4 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolensNOparallelization.py
+srun -n 16 --mpi=pmix --gpus-per-task=1 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolensNOparallelization.py

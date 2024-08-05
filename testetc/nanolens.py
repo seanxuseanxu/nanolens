@@ -38,9 +38,10 @@ from mpi4py import MPI
 import mpi4jax
 
 tfd = tfp.distributions
-numNodes = 2
+numNodes = 4
+numGPUs = numNodes * 4
 # In[2]:
-jax.distributed.initialize(local_device_ids=range(numNodes * 4))
+jax.distributed.initialize(local_device_ids=range(numNodes))
 print(f"Process {jax.process_index()} global devices : {jax.devices()}")
 print(f"Process {jax.process_index()} local devices : {jax.local_devices()}")
 
@@ -107,7 +108,7 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 2000
+n_samples_bs = 16000
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-2/3, 
                                       power=0.5, transition_steps=500)
 opt = optax.chain(
@@ -116,6 +117,7 @@ opt = optax.chain(
 )
 
 map_estimate, chi = model_seq.MAP(opt, n_samples=n_samples_bs,num_steps=350,seed=0)
+
 end = time.perf_counter()
 MAPtime = end - start
 print(f"Rank {rank} MAP time: {MAPtime}")
@@ -162,8 +164,13 @@ steps=100
 
 schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-3e-3, power=2, transition_steps=300)
 opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
-qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=2000, num_steps=1500)
 
+#with jax.profiler.trace("jax-trace",create_perfetto_link=True):
+qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=16000, num_steps=1500)
+    # key = jax.random.key(0)
+    # x = jax.random.normal(key, (5000, 5000))
+    # y = x @ x
+    # y.block_until_ready()
 end = time.perf_counter()
 SVItime = end-start
 

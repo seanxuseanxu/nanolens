@@ -1,0 +1,171 @@
+
+------------------------------------------------ Cray Performance Tools -------------------------------------------------
+   perftools-lite-events    perftools-lite-hbm      perftools-lite       perftools
+   perftools-lite-gpu       perftools-lite-loops    perftools-preload
+
+--------------------------------------- Cray Compiler/Network Dependent Packages ----------------------------------------
+   cray-mpich-abi/8.1.28    [1;32mcray-mpich/8.1.28[0m ([1;32mL[0m)
+
+-------------------------------------- /opt/cray/pe/lmod/modulefiles/mix_compilers --------------------------------------
+   aocc-mixed/3.2.0 (D)    gcc-mixed/12.2.0             (D)    intel-mixed/2023.1.0               nvhpc-mixed/23.9
+   aocc-mixed/4.0.0        gcc-native-mixed/12.3               intel-mixed/2023.2.0               nvhpc-mixed/24.5
+   aocc-mixed/4.1.0        intel-classic-mixed/2022.1.0 (D)    intel-oneapi-mixed/2022.1.0 (D)    nvidia-mixed/22.7 (D)
+   cce-mixed/15.0.1        intel-classic-mixed/2023.0.0        intel-oneapi-mixed/2023.0.0        nvidia-mixed/23.1
+   cce-mixed/16.0.0        intel-classic-mixed/2023.1.0        intel-oneapi-mixed/2023.1.0        nvidia-mixed/23.9
+   cce-mixed/16.0.1        intel-classic-mixed/2023.2.0        intel-oneapi-mixed/2023.2.0        nvidia-mixed/24.5
+   cce-mixed/17.0.0 (D)    intel-mixed/2022.1.0         (D)    nvhpc-mixed/22.7            (D)
+   gcc-mixed/11.2.0        intel-mixed/2023.0.0                nvhpc-mixed/23.1
+
+-------------------------------------------- Cray Compiler Dependent Modules --------------------------------------------
+   cray-hdf5/1.12.2.9    [1;32mcray-libsci/23.12.5[0m ([1;32mL[0m,D)
+
+---------------------------------------------- Cray MPI Dependent Modules -----------------------------------------------
+   cray-hdf5-parallel/1.12.2.9    cray-mpixlate/1.0.3    cray-parallel-netcdf/1.12.3.9
+
+-------------------------------------------- Cray Network Dependent Packages --------------------------------------------
+   cray-openshmemx/11.5.7    cray-openshmemx/11.6.0    cray-openshmemx/11.7.0 (D)
+   cray-openshmemx/11.5.8    cray-openshmemx/11.6.1
+
+------------------------------------ /opt/cray/pe/lmod/modulefiles/cpu/x86-milan/1.0 ------------------------------------
+   cray-fftw/3.3.10.3    cray-fftw/3.3.10.4    cray-fftw/3.3.10.5    cray-fftw/3.3.10.6 (D)
+
+---------------------------------------- /opt/cray/pe/lmod/lmod/modulefiles/Core ----------------------------------------
+   lmod (D)    settarg (D)
+
+--------------------------------------------------- Cray Core Modules ---------------------------------------------------
+   aocc/3.2.0              (D)      cray-mrnet/5.1.2       (D)      intel/2022.1.0
+   aocc/4.0.0                       cray-pals/1.2.9                 intel/2023.0.0
+   aocc/4.1.0                       cray-pals/1.2.11       (D)      intel/2023.1.0
+   atp/3.14.16                      cray-pals/1.2.12                intel/2023.2.0         (D)
+   atp/3.14.18                      cray-pmi/6.1.9                  iobuf/2.0.10
+   atp/3.15.0                       cray-pmi/6.1.10                 nvhpc/22.7
+   atp/3.15.1                       cray-pmi/6.1.11                 nvhpc/23.1
+   atp/3.15.2              (D)      cray-pmi/6.1.12                 nvhpc/23.9             (D)
+   cce/15.0.1                       cray-pmi/6.1.13        (D)      nvhpc/24.5
+   cce/16.0.0                       cray-python/3.9.13.1            nvidia/22.7
+   cce/16.0.1                       cray-python/3.10.10             nvidia/23.1
+   cce/17.0.0              (D)      cray-python/3.11.5     (D)      nvidia/23.9            (D)
+   cpe-cuda/23.02                   cray-R/4.2.1.1                  nvidia/24.5
+   cpe-cuda/23.03                   cray-R/4.2.1.2                  papi/7.0.0.1
+   cpe-cuda/23.05                   cray-R/4.3.1           (D)      papi/7.0.0.2
+   cpe-cuda/23.09                   cray-stat/4.11.13               papi/7.0.1.1
+   cpe-cuda/23.12          (D)      cray-stat/4.12.0                papi/7.0.1.2           (D)
+   cpe/23.02                        cray-stat/4.12.1                perftools-base/23.02.0
+   cpe/23.03                        cray-stat/4.12.2       (D)      perftools-base/23.03.0
+   cpe/23.05                        craype/2.7.19                   perftools-base/23.05.0
+   cpe/23.09                        craype/2.7.20                   perftools-base/23.09.0
+   [1;32mcpe/23.12[0m               ([1;32mL[0m,D)    craype/2.7.21                   [1;32mperftools-base/23.12.0[0m ([1;32mL[0m,D)
+   cray-ccdb/4.12.13                craype/2.7.23                   PrgEnv-aocc/8.3.3
+   cray-ccdb/5.0.0                  [1;32mcraype/2.7.30[0m          ([1;32mL[0m,D)    PrgEnv-aocc/8.4.0
+   cray-ccdb/5.0.1                  craypkg-gen/1.3.28              PrgEnv-aocc/8.5.0      (D)
+   cray-ccdb/5.0.2         (D)      craypkg-gen/1.3.30              PrgEnv-cray/8.3.3
+   cray-cti/2.15.14                 craypkg-gen/1.3.31     (D)      PrgEnv-cray/8.4.0
+   cray-cti/2.16.0                  [1;32mcudatoolkit/11.7[0m       ([1;32mL[0m)      PrgEnv-cray/8.5.0      (D)
+   cray-cti/2.17.2                  cudatoolkit/12.0                PrgEnv-gnu/8.3.3
+   cray-cti/2.18.0                  cudatoolkit/12.2       (D)      PrgEnv-gnu/8.4.0
+   cray-cti/2.18.1                  cudatoolkit/12.4                [1;32mPrgEnv-gnu/8.5.0[0m       ([1;32mL[0m,D)
+   cray-cti/2.18.2         (D)      [1;32mgcc-native/12.3[0m        ([1;32mL[0m)      PrgEnv-intel/8.3.3
+   [1;32mcray-dsmml/0.2.2[0m        ([1;32mL[0m)      gcc/10.3.0                      PrgEnv-intel/8.4.0
+   cray-dyninst/12.1.1              gcc/11.2.0                      PrgEnv-intel/8.5.0     (D)
+   cray-dyninst/12.2.0              gcc/12.2.0             (D)      PrgEnv-nvhpc/8.4.0
+   cray-dyninst/12.3.0              gdb4hpc/4.14.7                  PrgEnv-nvhpc/8.5.0     (D)
+   cray-dyninst/12.3.1     (D)      gdb4hpc/4.15.0                  PrgEnv-nvidia/8.3.3
+   cray-libpals/1.2.9               gdb4hpc/4.15.1                  PrgEnv-nvidia/8.4.0
+   cray-libpals/1.2.11     (D)      gdb4hpc/4.16.0         (D)      PrgEnv-nvidia/8.5.0    (D)
+   cray-libpals/1.2.12              intel-classic/2022.1.0 (D)      sanitizers4hpc/1.0.4
+   cray-libsci/23.02.1.1            intel-classic/2023.0.0          sanitizers4hpc/1.1.0
+   cray-libsci/23.05.1.4            intel-classic/2023.1.0          sanitizers4hpc/1.1.1
+   cray-libsci/23.09.1.1            intel-classic/2023.2.0          sanitizers4hpc/1.1.2   (D)
+   cray-libsci_acc/23.12.0          intel-oneapi/2022.1.0  (D)      valgrind4hpc/2.12.11
+   cray-mrnet/5.0.4                 intel-oneapi/2023.0.0           valgrind4hpc/2.13.0
+   cray-mrnet/5.1.0                 intel-oneapi/2023.1.0           valgrind4hpc/2.13.1
+   cray-mrnet/5.1.1                 intel-oneapi/2023.2.0           valgrind4hpc/2.13.2    (D)
+
+--------------------------------- /opt/cray/pe/lmod/modulefiles/craype-targets/default ----------------------------------
+   craype-accel-amd-gfx940        craype-hugepages16M     craype-hugepages4M          craype-network-ucx
+   craype-accel-host              craype-hugepages1G      craype-hugepages512M        craype-x86-milan-x
+   craype-accel-nvidia70          craype-hugepages256M    craype-hugepages64M         [1;32mcraype-x86-milan[0m   ([1;32mL[0m)
+   [1;32mcraype-accel-nvidia80[0m   ([1;32mL[0m)    craype-hugepages2G      craype-hugepages8M          craype-x86-rome
+   craype-accel-nvidia90          craype-hugepages2M      craype-network-none
+   craype-hugepages128M           craype-hugepages32M     [1;32mcraype-network-ofi[0m   ([1;32mL[0m)
+
+--------------------------------- /global/common/software/nersc/pe/modulefiles_hotfixes ---------------------------------
+   cudatoolkit/11.5
+
+----------------------------------------------- /opt/nersc/pe/modulefiles -----------------------------------------------
+   amber/20-gpu                     (D)      intel-llvm/2023-WW13            PrgEnv-llvm/0.5
+   amber/20                                  intel/2024.1.0           ([1;34mE[0m)    PrgEnv-llvm/1.0             (D)
+   arm-forge/23.1.1                          jamo/dev                        python/3.9-anaconda-2021.11
+   arm-forge/23.1.2                          jamo/prod                (D)    python/3.9
+   arm-forge/24.0                   (D)      jgi/python-jamo                 python/3.10
+   berkeleygw/3.0.1-cpu                      julia/1.8.5                     [1;32mpython/3.11[0m                 ([1;32mL[0m,D)
+   berkeleygw/3.0.1-gpu                      julia/1.9.4                     pytorch/1.11.0
+   berkeleygw/4.0-cpu                        julia/1.10.0                    pytorch/1.13.1
+   berkeleygw/4.0-gpu               (D)      julia/1.10.1                    pytorch/2.0.1
+   climate-utils/2023q2-old                  julia/1.10.2                    pytorch/2.1.0-cu12
+   climate-utils/2023q2             (D)      julia/1.10.3                    pytorch/2.3.1               (D)
+   cmake/3.22.0                     (D)      julia/1.10.4             (D)    qchem/6.0.0-cpu
+   cmake/3.24.3                              kokkos-cpu/4.3.00               R/4.2.3                     ([1;34mE[0m)
+   codee/2024.2.1                            kokkos-gpu/4.3.00               spack/develop
+   codee/2024.2.2                            llvm/nightly                    spack/e4s-23.05
+   codee/2024.2.3                   (D)      llvm/16                         spack/e4s-23.08
+   conda/Mambaforge-22.11.1-4                llvm/17.0.6                     spack/0.22                  (D)
+   conda/Mambaforge-23.1.0-1                 llvm/18.1.0              (D)    spin/2.0
+   conda/Miniconda3-py311_23.5.2-0           math-libs-real32/2023q2         sqs/1.0
+   [1;32mconda/Miniconda3-py311_23.11.0-2[0m ([1;32mL[0m,D)    mathematica/13.0.1              taskfarmer/1.5
+   contrib/1.0                               matlab-mcr/R2021b               tensorflow/2.9.0
+   cpu/1.0                                   matlab-mcr/R2023b        (D)    tensorflow/2.12.0
+   cudnn/8.3.2                               matlab/R2021b                   tensorflow/2.15.0           (D)
+   cudnn/8.7.0                               matlab/R2023b            (D)    texlive/2022
+   [1;32mcudnn/8.9.1_cuda11[0m               ([1;32mL[0m)      mongodb/4.0.28                  totalview/2023.2.15
+   cudnn/8.9.3_cuda12                        mongodb/100.5.2          (D)    totalview/2023.4.16
+   cudnn/9.1.0                      (D)      mpich/4.1.1                     totalview/2024.1.21         (D)
+   darshan/3.4.4-cpe-23.03                   mpich/4.2.0              (D)    valgrind/3.20.0
+   darshan/3.4.4                    (D)      mumps/5.5.1-gcc-11.2.0          valgrind/3.21.0
+   dmtcp/3.0.0                               mvasp/5.4.4-cpu                 valgrind/3.22.0             (D)
+   e4s/23.05                                 namd/2.15a2-cpu_mpi             vasp-tpc/5.4.4-cpu          (D)
+   e4s/23.08                        (D)      namd/2.15a2-cpu_ofi             vasp-tpc/6.2.1-gpu
+   eigen/3.4.0                               namd/2.15a2-gpu_ofi      (D)    vasp-tpc/6.3.2-cpu
+   espresso/7.0-libxc-5.2.2-cpu              nccl/2.14.3                     vasp-tpc/6.3.2-gpu
+   espresso/7.0-libxc-5.2.2-gpu              nccl/2.15.5-ofi                 vasp-tpc/6.4.2-cpu
+   espresso/7.1-libxc-6.1.0-cpu     (D)      nccl/2.17.1-ofi                 vasp-tpc/6.4.2-gpu
+   [1;32mevp-patch[0m                        ([1;32mL[0m)      nccl/2.18.3-cu12                vasp/5.4.1-cpu
+   fast-mkl-amd/fast-mkl-amd                 nccl/2.19.4                     vasp/5.4.4-cpu              (D)
+   forge/23.1.1                              nccl/2.21.5              (D)    vasp/6.2.1-gpu
+   forge/23.1.2                              nersc_cr/23.06                  vasp/6.3.2-cpu
+   forge/24.0                       (D)      nvidia-mixed/22.2               vasp/6.3.2-gpu
+   fpm/0.9.0                                 nvshmem/2.11.0                  vasp/6.4.1-cpu
+   fpm/0.10.0                       (D)      OpenCoarrays/2.10.1             vasp/6.4.1-gpu
+   globus-tools/1.0                          openmpi/5.0.0rc12               vasp/6.4.2-cpu
+   [1;32mgpu/1.0[0m                          ([1;32mL[0m)      openmpi/5.0.0                   vasp/6.4.2-gpu
+   gromacs/2021.5-plumed                     openmpi/5.0.3            (D)    vasp/6.4.3-cpu
+   gromacs/2021.5                            parallel/20210922               vasp/6.4.3-gpu
+   gromacs/2022.3-gpu               (D)      paraview/5.12.0-cpu             wannier90/3.1.0-gnu
+   hip/5.5.1                                 paraview/5.12.0-gpu      (D)    wannier90/3.1.0-nvidia
+   idl/8.5                                   petsc/3.19.3-cpu-complex        wannier90/3.1.0             (D)
+   idl/8.9                          (D)      PrgEnv-llvm/0.1
+
+--------------------------------------------------- Lmod Modulefiles ----------------------------------------------------
+   lmod    settarg
+
+----------------------------------------------------- Cray Modules ------------------------------------------------------
+   chapel/1.30.0
+   cray-lustre-client-ofed/2.15.0.7_rc2_cray_52_gef8e1df-2.5_13.16__gef8e1dfaf5.shasta
+   dvs/2.15_4.5.240-2.5_0.0__g507d1fff
+   [1;32mlibfabric/1.15.2.0[0m                                                                  ([1;32mL[0m)
+   [1;32mxpmem/2.6.2-2.5_2.38__gd067c3f.shasta[0m                                               ([1;32mL[0m)
+
+  Where:
+   [1;32mL[0m:  Module is loaded
+   [1;34mE[0m:  Experimental
+   D:  Default Module
+
+If the avail list is too long consider trying:
+
+"module --default avail" or "ml -d av" to just list the default modules.
+"module overview" or "ml ov" to display the number of modules for each name.
+
+Use "module spider" to find all possible modules and extensions.
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+
+

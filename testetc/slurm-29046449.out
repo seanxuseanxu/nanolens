@@ -1,0 +1,836 @@
+
+The following have been reloaded with a version change:
+  1) cudnn/8.9.1_cuda11 => cudnn/8.9.3_cuda12
+
+2024-08-05 11:37:51.488609: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:2: failed initializing StreamExecutor for CUDA device ordinal 2: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:51.531547: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:1: failed initializing StreamExecutor for CUDA device ordinal 1: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:51.666106: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:2: failed initializing StreamExecutor for CUDA device ordinal 2: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:51.843732: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:1: failed initializing StreamExecutor for CUDA device ordinal 1: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:52.023414: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:2: failed initializing StreamExecutor for CUDA device ordinal 2: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:52.061576: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:3: failed initializing StreamExecutor for CUDA device ordinal 3: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:52.119361: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:1: failed initializing StreamExecutor for CUDA device ordinal 1: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+2024-08-05 11:37:52.133441: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:3: failed initializing StreamExecutor for CUDA device ordinal 3: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:52.181122: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:1: failed initializing StreamExecutor for CUDA device ordinal 1: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:52.289577: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:3: failed initializing StreamExecutor for CUDA device ordinal 3: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:52.618914: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:3: failed initializing StreamExecutor for CUDA device ordinal 3: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:37:52.724955: W external/xla/xla/service/platform_util.cc:199] unable to create StreamExecutor for CUDA:2: failed initializing StreamExecutor for CUDA device ordinal 2: INTERNAL: Failed call to cuDeviceGet: CUDA_ERROR_INVALID_DEVICE: invalid device ordinal
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: no supported devices found for platform CUDA
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: no supported devices found for platform CUDA (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: Getting local topologies failed: Error 1: GetKeyValue() timed out with key: cuda:local_topology/cuda/1 and duration: 2m
+
+Error 2: GetKeyValue() timed out with key: cuda:local_topology/cuda/2 and duration: 2m
+
+Error 3: GetKeyValue() timed out with key: cuda:local_topology/cuda/3 and duration: 2m
+
+Error 4: GetKeyValue() timed out with key: cuda:local_topology/cuda/5 and duration: 2m
+
+Error 5: GetKeyValue() timed out with key: cuda:local_topology/cuda/6 and duration: 2m
+
+Error 6: GetKeyValue() timed out with key: cuda:local_topology/cuda/7 and duration: 2m
+
+Error 7: GetKeyValue() timed out with key: cuda:local_topology/cuda/9 and duration: 2m
+
+Error 8: GetKeyValue() timed out with key: cuda:local_topology/cuda/10 and duration: 2m
+
+Error 9: GetKeyValue() timed out with key: cuda:local_topology/cuda/11 and duration: 2m
+
+Error 10: GetKeyValue() timed out with key: cuda:local_topology/cuda/13 and duration: 2m
+
+Error 11: GetKeyValue() timed out with key: cuda:local_topology/cuda/14 and duration: 2m
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': INTERNAL: Getting local topologies failed: Error 1: GetKeyValue() timed out with key: cuda:local_topology/cuda/1 and duration: 2m
+
+Error 2: GetKeyValue() timed out with key: cuda:local_topology/cuda/2 and duration: 2m
+
+Error 3: GetKeyValue() timed out with key: cuda:local_topology/cuda/3 and duration: 2m
+
+Error 4: GetKeyValue() timed out with key: cuda:local_topology/cuda/5 and duration: 2m
+
+Error 5: GetKeyValue() timed out with key: cuda:local_topology/cuda/6 and duration: 2m
+
+Error 6: GetKeyValue() timed out with key: cuda:local_topology/cuda/7 and duration: 2m
+
+Error 7: GetKeyValue() timed out with key: cuda:local_topology/cuda/9 and duration: 2m
+
+Error 8: GetKeyValue() timed out with key: cuda:local_topology/cuda/10 and duration: 2m
+
+Error 9: GetKeyValue() timed out with key: cuda:local_topology/cuda/11 and duration: 2m
+
+Error 10: GetKeyValue() timed out with key: cuda:local_topology/cuda/13 and duration: 2m
+
+Error 11: GetKeyValue() timed out with key: cuda:local_topology/cuda/14 and duration: 2m (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+E0805 11:42:51.519417 2009449 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.519269937","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7f7cee9328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.519269937","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+E0805 11:42:51.562302 2009203 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.562135596","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7fd3acb328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.562135596","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+E0805 11:42:51.685986 2009205 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.685871132","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7ff86cd328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.685871132","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+E0805 11:42:51.867395 2009447 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.867228610","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7eff393228e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883371.867228610","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+srun: error: nid003780: task 6: Exited with exit code 1
+srun: Terminating StepId=29046449.0
+E0805 11:42:52.054259 1136126 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.054096754","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7f6c2df328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.054096754","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+E0805 11:42:52.083179 2009451 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.083096990","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7fd9f41328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.083096990","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+E0805 11:42:52.155708 1633936 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.155589633","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7f407b12e8e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+E0805 11:42:52.157468 2009207 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.157313685","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7f9bce5268e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.157313685","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.155589633","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+E0805 11:42:52.200815 1136124 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.200716025","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7f519d12e8e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.200716025","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: GetKeyValue() timed out with key: cuda:global_topology/cuda and duration: 5m
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+E0805 11:42:52.310825 1633940 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.310694170","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7f67ddf328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Deadline Exceeded
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.310694170","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Deadline Exceeded","grpc_status":4}
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': DEADLINE_EXCEEDED: GetKeyValue() timed out with key: cuda:global_topology/cuda and duration: 5m (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+    backend = _init_backend(platform)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: GetKeyValue() timed out with key: cuda:global_topology/cuda and duration: 5m
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': DEADLINE_EXCEEDED: GetKeyValue() timed out with key: cuda:global_topology/cuda and duration: 5m (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+2024-08-05 11:42:52.343614: E external/xla/xla/tsl/distributed_runtime/coordination/coordination_service.cc:1291] Shutdown barrier in coordination service has failed:
+DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+ [type.googleapis.com/tensorflow.CoordinationServiceError='']
+This suggests that the workers are out of sync. Either at least one worker is too fast in its execution / crashed early or too slow / hanging. Check the logs for an earlier error to identify the root cause.
+2024-08-05 11:42:52.343656: E external/xla/xla/tsl/distributed_runtime/coordination/coordination_service.cc:837] INTERNAL: Shutdown barrier has been passed with status: 'DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+ [type.googleapis.com/tensorflow.CoordinationServiceError='']', but this task is not at the barrier yet. [type.googleapis.com/tensorflow.CoordinationServiceError='']
+E0805 11:42:52.343925 2009202 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343868554","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4} [type.googleapis.com/tensorflow.CoordinationServiceError='']
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+2024-08-05 11:42:52.343907: E external/xla/xla/tsl/distributed_runtime/coordination/coordination_service.cc:486] Stopping coordination service as shutdown barrier timed out. Check the task logs for an earlier error.
+E0805 11:42:52.344016 1633938 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343905506","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4} [type.googleapis.com/tensorflow.CoordinationServiceError='']
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+E0805 11:42:52.344004 2009446 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343909315","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4} [type.googleapis.com/tensorflow.CoordinationServiceError='']
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+E0805 11:42:52.343929 1136128 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343864858","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4} [type.googleapis.com/tensorflow.CoordinationServiceError='']
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7f32633328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+Exception ignored in atexit callback: <function shutdown at 0x7f9d88b328e0>
+Traceback (most recent call last):
+E0805 11:42:52.343976 1136123 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343910887","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4} [type.googleapis.com/tensorflow.CoordinationServiceError='']
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 879, in backends
+Exception ignored in atexit callback: <function shutdown at 0x7f57cd9268e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+Exception ignored in atexit callback: <function shutdown at 0x7f34403328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+Exception ignored in atexit callback: <function shutdown at 0x7f6f885328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+    global_state.shutdown()
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    backend = _init_backend(platform)
+    self.client.shutdown()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 970, in _init_backend
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343909315","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4}
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343868554","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4}
+    backend = registration.factory()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 676, in factory
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343905506","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4}
+    return xla_client.make_c_api_client(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jaxlib/xla_client.py", line 200, in make_c_api_client
+    return _xla.get_c_api_client(plugin_name, options, distributed_client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib.xla_extension.XlaRuntimeError: CANCELLED: Coordination service is shutting down. Cancelling GetKeyValue() for key: cuda:global_topology/cuda
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/GetKeyValue:
+:{"created":"@1722883372.344510816","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Coordination service is shutting down. Cancelling GetKeyValue() for key: cuda:global_topology/cuda","grpc_status":1}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/test.py", line 6, in <module>
+    print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1162, in process_index
+    return get_backend(backend).process_index()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 1016, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 995, in _get_backend_uncached
+    bs = backends()
+         ^^^^^^^^^^
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/xla_bridge.py", line 895, in backends
+    raise RuntimeError(err_msg)
+RuntimeError: Unable to initialize backend 'cuda': CANCELLED: Coordination service is shutting down. Cancelling GetKeyValue() for key: cuda:global_topology/cuda
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/GetKeyValue:
+:{"created":"@1722883372.344510816","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Coordination service is shutting down. Cancelling GetKeyValue() for key: cuda:global_topology/cuda","grpc_status":1} (you may need to uninstall the failing plugin package, or set JAX_PLATFORMS=cpu to skip this backend.)
+E0805 11:42:52.367033 1633935 coordination_service_agent.cc:514] Failed to disconnect from coordination service with status: INTERNAL: Barrier requested after coordination service has shut down.
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.367000768","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier requested after coordination service has shut down.","grpc_status":13} [type.googleapis.com/tensorflow.CoordinationServiceError='']
+Proceeding with agent shutdown anyway. This is usually caused by an earlier error during execution. Check the logs (this task or the leader) for an earlier error to debug further.
+Exception ignored in atexit callback: <function shutdown at 0x7fb2bb3328e0>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 208, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: INTERNAL: Barrier requested after coordination service has shut down.
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.367000768","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier requested after coordination service has shut down.","grpc_status":13}
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    global_state.shutdown()
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/distributed.py", line 110, in shutdown
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343864858","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4}
+    self.client.shutdown()
+jaxlib.xla_extension.XlaRuntimeError: DEADLINE_EXCEEDED: Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:
+/job:jax_worker/replica:0/task:12
+
+Additional GRPC error information from remote target unknown_target_for_coordination_leader while calling /tensorflow.CoordinationService/ShutdownTask:
+:{"created":"@1722883372.343910887","description":"Error received from peer ipv4:128.55.65.138:63153","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Barrier timed out. Barrier_id: Shutdown::3023201179463740215. Timed out task names:\n/job:jax_worker/replica:0/task:12\n","grpc_status":4}
+srun: error: nid003829: tasks 9-10: Exited with exit code 1
+srun: error: nid001960: tasks 1-2: Exited with exit code 1
+srun: error: nid008324: task 13: Exited with exit code 1
+slurmstepd: error: *** STEP 29046449.0 ON nid001960 CANCELLED AT 2024-08-05T18:42:52 ***
+srun: error: nid008324: tasks 14-15: Exited with exit code 1
+srun: error: nid003780: tasks 4-5,7: Exited with exit code 1
+srun: error: nid001960: tasks 0,3: Exited with exit code 1
+srun: error: nid003829: tasks 8,11: Exited with exit code 1
+srun: error: nid008324: task 12: Exited with exit code 1

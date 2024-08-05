@@ -1,0 +1,9 @@
+slurmstepd: error: execve(): /global/homes/s/seanjx/gigalens/testetc/test.py: Exec format error
+slurmstepd: error: execve(): /global/homes/s/seanjx/gigalens/testetc/test.py: Exec format error
+srun: error: nid002485: task 0: Exited with exit code 8
+srun: Terminating StepId=28932829.0
+slurmstepd: error: execve(): /global/homes/s/seanjx/gigalens/testetc/test.py: Exec format error
+slurmstepd: error: execve(): /global/homes/s/seanjx/gigalens/testetc/test.py: Exec format error
+srun: error: nid003025: task 1: Exited with exit code 8
+srun: error: nid008501: task 3: Exited with exit code 8
+srun: error: nid008485: task 2: Exited with exit code 8

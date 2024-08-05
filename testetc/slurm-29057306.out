@@ -1,0 +1,381 @@
+
+The following have been reloaded with a version change:
+  1) cudatoolkit/11.7 => cudatoolkit/12.2
+
+
+The following have been reloaded with a version change:
+  1) cudnn/8.9.1_cuda11 => cudnn/8.9.3_cuda12
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    import optax
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+    import optax
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+    import optax
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax import contrib
+    from optax import contrib
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax import contrib
+    from optax import contrib
+    from optax import contrib
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax import contrib
+    from optax import contrib
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax._src import utils
+    from optax._src import utils
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    from optax._src import utils
+    from optax._src import utils
+    from optax._src import utils
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    from optax._src import utils
+    from optax._src import utils
+    from optax._src import utils
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+    import jax.scipy.stats.norm as multivariate_normal
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax.scipy import linalg, special
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax._src.scipy.linalg import (
+    from jax._src.scipy.linalg import (
+    from jax._src.scipy.linalg import (
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+            ^^^^^^^^^^^^^^^^^
+            ^^^^^^^^^^^^^^^^^
+            ^^^^^^^^^^^^^^^^^
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+            ^^^^^^^^^^^^^^^^^
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+    @_wraps(scipy.linalg.tril)
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+            ^^^^^^^^^^^^^^^^^
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+            ^^^^^^^^^^^^^^^^^
+            ^^^^^^^^^^^^^^^^^
+            ^^^^^^^^^^^^^^^^^
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+            ^^^^^^^^^^^^^^^^^
+    @_wraps(scipy.linalg.tril)
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+    @_wraps(scipy.linalg.tril)
+    @_wraps(scipy.linalg.tril)
+            ^^^^^^^^^^^^^^^^^
+            ^^^^^^^^^^^^^^^^^
+            ^^^^^^^^^^^^^^^^^
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+            ^^^^^^^^^^^^^^^^^
+            ^^^^^^^^^^^^^^^^^
+    @_wraps(scipy.linalg.tril)
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+            ^^^^^^^^^^^^^^^^^
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 4, in <module>
+    import optax
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/__init__.py", line 17, in <module>
+    from optax import contrib
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/__init__.py", line 21, in <module>
+    from optax.contrib.dadapt_adamw import dadapt_adamw
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/contrib/dadapt_adamw.py", line 27, in <module>
+    from optax._src import utils
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/optax/_src/utils.py", line 22, in <module>
+    import jax.scipy.stats.norm as multivariate_normal
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/stats/__init__.py", line 40, in <module>
+    from jax._src.scipy.stats.kde import gaussian_kde as gaussian_kde
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/stats/kde.py", line 26, in <module>
+    from jax.scipy import linalg, special
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/scipy/linalg.py", line 18, in <module>
+    from jax._src.scipy.linalg import (
+  File "/global/homes/s/seanjx/.conda/envs/gigajax2.0/lib/python3.11/site-packages/jax/_src/scipy/linalg.py", line 403, in <module>
+    @_wraps(scipy.linalg.tril)
+            ^^^^^^^^^^^^^^^^^
+AttributeError: module 'scipy.linalg' has no attribute 'tril'
+srun: error: nid008300: tasks 8-11: Exited with exit code 1
+srun: Terminating StepId=29057306.0
+srun: error: nid002940: tasks 0-3: Exited with exit code 1
+srun: error: nid008621: tasks 12-15: Exited with exit code 1
+srun: error: nid003709: tasks 4-7: Exited with exit code 1

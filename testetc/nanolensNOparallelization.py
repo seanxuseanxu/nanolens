@@ -39,7 +39,6 @@ tfd = tfp.distributions
 
 # In[2]:
 
-
 #create output directory
 now = "246_"+str(datetime.now())
 
@@ -95,7 +94,7 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 2000
+n_samples_bs = 16000
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-2/3, 
                                       power=0.5, transition_steps=500)
 opt = optax.chain(
@@ -155,7 +154,7 @@ steps=100
 
 schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-3e-3, power=2, transition_steps=300)
 opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
-qz, loss_hist = model_seq.SVI(best, opt, n_vi=2000, num_steps=1500)
+qz, loss_hist = model_seq.SVI(best, opt, n_vi=16000, num_steps=1500)
 end = time.perf_counter()
 SVItime = end-start
 

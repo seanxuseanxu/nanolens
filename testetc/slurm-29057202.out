@@ -1,0 +1,18 @@
+
+The following have been reloaded with a version change:
+  1) cudatoolkit/11.7 => cudatoolkit/12.2
+
+
+The following have been reloaded with a version change:
+  1) cudnn/8.9.1_cuda11 => cudnn/8.9.3_cuda12
+
+srun: error: nid002752: task 6: Segmentation fault
+srun: Terminating StepId=29057202.0
+srun: error: nid001124: task 3: Segmentation fault
+srun: error: nid003333: tasks 8-9: Segmentation fault
+srun: error: nid008484: task 13: Segmentation fault
+slurmstepd: error: *** STEP 29057202.0 ON nid001124 CANCELLED AT 2024-08-05T21:52:08 ***
+srun: error: nid003333: tasks 10-11: Segmentation fault
+srun: error: nid001124: tasks 0-2: Segmentation fault
+srun: error: nid002752: tasks 4-5,7: Segmentation fault
+srun: error: nid008484: tasks 12,14-15: Segmentation fault
