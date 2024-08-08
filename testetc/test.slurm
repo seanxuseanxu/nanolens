@@ -15,11 +15,12 @@ export OMP_PLACES=threads
 export OMP_PROC_BIND=spread
 
 module load python/3.11
-module load cudatoolkit/12.4
-module load cudnn/9.1.0_cuda12
+module load cudatoolkit/12.2
+module load cudnn/8.9.3_cuda12
 
 export PMIX_MCA_psec=^munge
 export MPI4JAX_USE_CUDA_MPI=1
+export MPICH_GPU_SUPPORT_ENABLED=1
 
 conda activate /global/homes/s/seanjx/.conda/envs/gigajax2.0
 

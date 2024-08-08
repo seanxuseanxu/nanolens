@@ -42,13 +42,14 @@ numNodes = 4
 numGPUs = numNodes * 4
 # In[2]:
 jax.distributed.initialize(local_device_ids=range(numNodes))
-print(f"Process {jax.process_index()} global devices : {jax.devices()}")
-print(f"Process {jax.process_index()} local devices : {jax.local_devices()}")
+
 
 comm = MPI.COMM_WORLD
 size = comm.Get_size()
 rank = comm.Get_rank()
-print(f"Process {jax.process_index()} rank: {rank}")
+print(f"Process {jax.process_index()} global devices : {jax.devices()}")
+print(f"Process {jax.process_index()} local devices : {jax.local_devices()}")
+print(f"Process {jax.process_index()} rank: {rank} out of {size}")
 if jax.process_index() == 0:
     isRoot = True
 else: 
@@ -82,8 +83,6 @@ threshold_lens=1.
 error_masked=err_map
 
 if isRoot: np.save(path+"err_map.npy",err_map)
-print(type(psf),type(observed_img),type(err_map))
-print(psf.dtype,observed_img.dtype,err_map.dtype)
 # In[4]:
 
 
@@ -108,7 +107,7 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 16000
+n_samples_bs = 64000
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-2/3, 
                                       power=0.5, transition_steps=500)
 opt = optax.chain(
@@ -144,6 +143,7 @@ print(f"Rank {rank} log_prob time: {logProbTime}")
 allBest, token = mpi4jax.gather(best, 0, comm=comm, token=token)
 
 if isRoot:
+    print(f"allBest size: {jnp.shape(allBest)}")
     lps = prob_model.log_prob(LensSimulator(phys_model, sim_config, bs=numNodes), allBest)[0]
     bestOfAll = allBest[jnp.nanargmax(lps)]
     params = prob_model.bij.forward(bestOfAll.tolist()[0])
@@ -152,7 +152,8 @@ if isRoot:
     chi2 = np.sum((resid/err_map)**2)
     dof = len(np.reshape(err_map,-1)[np.reshape(err_map,-1)<1])-numParams
     MAPchi = chi2/dof
-
+    print(f"MAP chi-squared: {MAPchi}")
+    
     np.save(path+"/best.npy",bestOfAll)
 else:
     bestOfAll = best
@@ -166,7 +167,7 @@ schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-3e-3, power
 opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
 
 #with jax.profiler.trace("jax-trace",create_perfetto_link=True):
-qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=16000, num_steps=1500)
+qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=64000, num_steps=1500)
     # key = jax.random.key(0)
     # x = jax.random.normal(key, (5000, 5000))
     # y = x @ x

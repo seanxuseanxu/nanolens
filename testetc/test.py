@@ -2,7 +2,7 @@
 # coding: utf-8
 
 import jax
-jax.distributed.initialize(local_device_ids=range(16))  # On GPU, see above for the necessary arguments.
+jax.distributed.initialize()#local_device_ids=range(16))  # On GPU, see above for the necessary arguments.
 print(f"Process {jax.process_index()} global devices : {jax.devices()}")
 print(f"Process {jax.process_index()} local devices : {jax.local_devices()}")
 

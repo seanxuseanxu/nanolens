@@ -1,0 +1,104 @@
+
+EnvironmentLocationNotFound: Not a conda environment: /global/homes/s/seanjx/.conda/envs/gigajaxtest2.0
+
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+    import jax.random
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+ModuleNotFoundError: No module named 'jax'
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+srun: error: nid001012: tasks 0-3: Exited with exit code 1
+srun: Terminating StepId=29120407.0
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+Traceback (most recent call last):
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 13, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    from gigalens.jax.inference import ModellingSequence
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    from gigalens.jax.inference import ModellingSequence
+  File "/global/homes/s/seanjx/gigalens/srctest/gigalens/jax/inference.py", line 3, in <module>
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+    import jax.random
+ModuleNotFoundError: No module named 'jax'
+srun: error: nid001181: tasks 12-15: Exited with exit code 1
+srun: error: nid001085: tasks 4-7: Exited with exit code 1
+srun: error: nid001180: tasks 8-11: Exited with exit code 1

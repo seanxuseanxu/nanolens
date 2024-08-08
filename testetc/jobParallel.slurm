@@ -19,8 +19,8 @@ module load cudatoolkit/12.2
 module load cudnn/8.9.3_cuda12
 
 export PMIX_MCA_psec=^munge
-export MPI4JAX_USE_CUDA_MPI=0
+export MPI4JAX_USE_CUDA_MPI=1
 
-conda activate /global/homes/s/seanjx/.conda/envs/gigajaxtest2.0
+conda activate /global/homes/s/seanjx/.conda/envs/gigajax2.0
 
-srun -n 16 --mpi=pmix --gpus-per-task=1 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolens.py
+srun -n 4 --gpus-per-task=4 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolens.py

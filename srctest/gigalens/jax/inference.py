@@ -141,12 +141,13 @@ class ModellingSequence(gigalens.inference.ModellingSequenceInterface):
         opt_state = optimizer.init(replicated_params)
         loss_hist = []
         loss_hist_individual = []
+        token = mpi4jax.barrier(comm=comm,token=None)
         with trange(num_steps,ascii=True) as pbar:
             for step in pbar:
                 loss, (grads,) = get_update(replicated_params, seeds)
                 lossIndividual = float(jnp.mean(loss))
                 
-                allLoss, token = mpi4jax.allgather(loss, comm=comm)
+                allLoss, token = mpi4jax.allgather(loss, comm=comm, token=token)
                 allGrads, token = mpi4jax.allgather(grads, comm=comm, token=token)
                 loss = float(jnp.mean(allLoss))
                 grads = jnp.mean(allGrads, axis=0)
