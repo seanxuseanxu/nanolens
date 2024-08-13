@@ -23,4 +23,4 @@ export MPI4JAX_USE_CUDA_MPI=1
 
 conda activate /global/homes/s/seanjx/.conda/envs/gigajax2.0
 
-srun -n 1 --mpi=pmix --gpus-per-task=4 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolensNOparallelization.py
+srun -n 1 --mpi=pmix --gpus-per-task=1 --gpus-per-node=4 /global/homes/s/seanjx/gigalens/testetc/nanolensNOparallelization.py

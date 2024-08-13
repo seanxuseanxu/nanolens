@@ -94,7 +94,7 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 64000
+n_samples_bs = 1000
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-2/3, 
                                       power=0.5, transition_steps=500)
 opt = optax.chain(
@@ -154,7 +154,7 @@ steps=100
 
 schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-3e-3, power=2, transition_steps=300)
 opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
-qz, loss_hist = model_seq.SVI(best, opt, n_vi=64000, num_steps=1500)
+qz, loss_hist = model_seq.SVI(best, opt, n_vi=1000, num_steps=1500)
 end = time.perf_counter()
 SVItime = end-start
 
@@ -173,6 +173,7 @@ HMCtime = end-start
 print(HMCtime)
 
 # In[ ]:
+print(f"samples.all_states shape: {jnp.shape(samples.all_states)}")
 
 
 rhat= tfp.mcmc.potential_scale_reduction(jnp.transpose(samples.all_states, (1,2,0,3)), independent_chain_ndims=2)

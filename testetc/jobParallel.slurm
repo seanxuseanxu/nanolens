@@ -7,7 +7,8 @@
 #SBATCH --mail-user=seanjx@lbl.gov
 #SBATCH --mail-type=ALL
 #SBATCH -t 30:00
-#SBATCH -A m3592
+#SBATCH -A ntrain4
+#SBATCH --reservation=NERSC_hackathon_2024_prep
 
 #OpenMP settings:
 export OMP_NUM_THREADS=1

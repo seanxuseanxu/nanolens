@@ -1,0 +1,14 @@
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 206
+    samples_all_states = samples_all_states.reshape(-1,samples_all_states.shape[-3],samples_all_states.shape[-2] samples_all_states.shape[-1])
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+srun: error: nid003632: task 1: Exited with exit code 1
+srun: Terminating StepId=29336141.0
+  File "/global/homes/s/seanjx/gigalens/testetc/nanolens.py", line 206
+    samples_all_states = samples_all_states.reshape(-1,samples_all_states.shape[-3],samples_all_states.shape[-2] samples_all_states.shape[-1])
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+srun: error: nid003629: task 0: Exited with exit code 1
+srun: error: nid003636: task 3: Terminated
+srun: error: nid003633: task 2: Terminated
+srun: Force Terminated StepId=29336141.0

@@ -107,7 +107,7 @@ print(numParams,priorObjects)
 
 start = time.perf_counter()
 
-n_samples_bs = 64000
+n_samples_bs = 4000
 schedule_fn = optax.polynomial_schedule(init_value=-1e-2, end_value=-1e-2/3, 
                                       power=0.5, transition_steps=500)
 opt = optax.chain(
@@ -167,7 +167,7 @@ schedule_fn = optax.polynomial_schedule(init_value=-1e-6, end_value=-3e-3, power
 opt = optax.chain(optax.scale_by_adam(),optax.scale_by_schedule(schedule_fn),)
 
 #with jax.profiler.trace("jax-trace",create_perfetto_link=True):
-qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=64000, num_steps=1500)
+qz, loss_hist, loss_hist_individual = model_seq.SVI(best, opt, n_vi=4000, num_steps=1500)
     # key = jax.random.key(0)
     # x = jax.random.normal(key, (5000, 5000))
     # y = x @ x
@@ -176,6 +176,7 @@ end = time.perf_counter()
 SVItime = end-start
 
 print(SVItime)
+
 allloss_hist_individual, token = mpi4jax.gather(jnp.array(loss_hist_individual),0,comm=comm,token=token)
 allloss_hist, token = mpi4jax.gather(jnp.array(loss_hist),0,comm=comm,token=token)
 
@@ -196,12 +197,21 @@ end = time.perf_counter()
 
 HMCtime = end-start
 print(HMCtime)
-
+if isRoot: print(f"samples.all_states shape: {jnp.shape(samples.all_states)}")
 # In[ ]:
+# rhat= tfp.mcmc.potential_scale_reduction(jnp.transpose(samples.all_states, (1,2,0,3)), independent_chain_ndims=2)
+# print(rhat)
 
 
-rhat= tfp.mcmc.potential_scale_reduction(jnp.transpose(samples.all_states, (1,2,0,3)), independent_chain_ndims=2)
-print(rhat)
+samples_all_states, token = mpi4jax.allgather(samples.all_states, comm=comm, token=token)
+samples_all_states = samples_all_states.reshape(-1,samples_all_states.shape[-3],samples_all_states.shape[-2], samples_all_states.shape[-1])
+
+if isRoot: print(f"samples_all_states shape: {jnp.shape(samples_all_states)}")
+samples_all_states = samples_all_states
+
+rhat= tfp.mcmc.potential_scale_reduction(jnp.transpose(samples_all_states, (1,2,0,3)), independent_chain_ndims=2)
+if isRoot: print(f"all rhat {rhat}")
+
 
 # In[ ]:
 
